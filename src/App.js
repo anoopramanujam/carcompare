@@ -5,12 +5,12 @@ import Works from './components/home/Works';
 import About from './components/home/About';
 import Menu from './components/home/Menu';
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <div className="ui container">
         <Menu />
-        <div className="ui segment">
+        <div className="ui basic segment">
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -20,6 +20,6 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
