@@ -1,11 +1,12 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
 import '../../globals/Styles.css';
 import './CarCard.css';
 
 function CarCard({ car }) {
   return (
-    <div className="four wide column cc-card">
-      <div className="cc-margin">
+    <Col>
+      <div className="cc-margin cc-padding cc-border">
         {car.Make}
         <div className="cc-title">
           {car.Model}
@@ -17,7 +18,7 @@ function CarCard({ car }) {
         {' '}
         Lakhs
       </div>
-    </div>
+    </Col>
   );
 }
 
