@@ -1,15 +1,21 @@
 import React from 'react';
-import '../../globals/styles.css';
+import '../../globals/Styles.css';
+import './CarCard.css';
 
 function CarCard({ car }) {
   return (
-    <div className="ui card cc-margin">
+    <div className="four wide column cc-card">
       <div className="cc-margin">
         {car.Make}
+        <div className="cc-title">
+          {car.Model}
+          {' '}
+          {car.Variant}
+        </div>
+        <hr />
+        {car.Price}
         {' '}
-        {car.Model}
-        {' '}
-        {car.Variant}
+        Lakhs
       </div>
     </div>
   );

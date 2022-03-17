@@ -6,8 +6,12 @@ function Result() {
   console.log(carData);
   return (
     <div className="ui segment">
-      <div className="ui internally celled grid">
-        { carData.map((car) => <div key={car.Variant}><CarCard car={car} /></div>)}
+      <div className="ui grid">
+        { carData.map((car) => (
+          <React.Fragment key={`${car.Make}-${car.Model}-${car.Variant}`}>
+            <CarCard car={car} />
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );
