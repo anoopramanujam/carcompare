@@ -1,91 +1,117 @@
 import React from 'react';
-import Tab from 'react-bootstrap/Tab';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Stack from 'react-bootstrap/Stack';
-import Container from 'react-bootstrap/Container';
-import { FiFileText, FiSettings, FiSliders } from 'react-icons/fi';
-// import { IconContext } from 'react-icons';
-import SpecFilter from './SpecFilter';
+import { styled } from '@mui/material/styles';
+import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+import {
+  Box, Stepper, Step, StepLabel, Button, StepButton,
+} from '../mui';
 import FeatureFilter from './FeatureFilter';
+import SpecFilter from './SpecFilter';
 import PrefFilter from './PrefFilter';
-import '../../globals/Styles.css';
 
-const TabSpecs = 'Specifications';
-const TabFeatures = 'Features';
-const TabPrefs = 'Preferences';
+const steps = ['Specifications', 'Features', 'Preferences'];
 
-function renderTab(tab) {
-  const title = tab;
-  let icon;
-  if (tab === TabSpecs) {
-    icon = <FiFileText />;
-  } else if (tab === TabFeatures) {
-    icon = <FiSettings />;
-  } else {
-    icon = <FiSliders />;
-  }
+const FilterStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  backgroundColor: theme.palette.primary.light,
+  zIndex: 1,
+  color: '#fff',
+  width: 50,
+  height: 50,
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ...(ownerState.active && {
+    backgroundColor: theme.palette.primary.dark,
+    backgroundImage:
+      `linear-gradient( 136deg, ${theme.palette.primary.light} 0%,  ${theme.palette.primary.dark} 100%)`,
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.5)',
+  }),
+}));
+
+function FilterStepIcon(props) {
+  const {
+    active, completed, className, icon,
+  } = props;
+
+  const icons = {
+    1: <EventNoteOutlinedIcon />,
+    2: <SettingsOutlinedIcon />,
+    3: <TuneOutlinedIcon />,
+  };
+
   return (
-  // <IconContext.Provider value={{ color: 'black' }}>
-    <Stack direction="horizontal">
-      <div className="cc-selector" style={{ fontSize: '1.2em' }}>
-        {icon}
-        {' '}
-        {title}
-
-      </div>
-
-    </Stack>
-  // </IconContext.Provider>
+    <FilterStepIconRoot ownerState={{ completed, active }} className={className}>
+      {icons[String(icon)]}
+    </FilterStepIconRoot>
   );
 }
 
 function Filters() {
-  return (
-    <Tab.Container defaultActiveKey="specs">
-      <Row>
-        <Col>
-          <Nav variant="pills">
-            <Nav.Item>
-              <Nav.Link eventKey="specs">{renderTab(TabSpecs)}</Nav.Link>
-            </Nav.Item>
-          </Nav>
+  const [activeStep, setActiveStep] = React.useState(0);
 
-        </Col>
-        <Col>
-          <Nav variant="pills">
-            <Nav.Item>
-              <Nav.Link eventKey="features">{renderTab(TabFeatures)}</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-        <Col>
-          <Nav variant="pills">
-            <Nav.Item>
-              <Nav.Link eventKey="prefs">{renderTab(TabPrefs)}</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Container>
-            <Tab.Content>
-              <Tab.Pane eventKey="specs">
-                <SpecFilter />
-              </Tab.Pane>
-              <Tab.Pane eventKey="features">
-                <FeatureFilter />
-              </Tab.Pane>
-              <Tab.Pane eventKey="prefs">
-                <PrefFilter />
-              </Tab.Pane>
-            </Tab.Content>
-          </Container>
-        </Col>
-      </Row>
-    </Tab.Container>
+  const totalSteps = () => steps.length;
+  const isLastStep = () => activeStep === totalSteps() - 1;
+
+  const handleNext = () => {
+    const newActiveStep = isLastStep() ? 0 : activeStep + 1;
+    setActiveStep(newActiveStep);
+  };
+
+  const renderFilter = () => {
+    if (activeStep === 0) {
+      return <SpecFilter />;
+    } if (activeStep === 1) {
+      return <FeatureFilter />;
+    }
+    return <PrefFilter />;
+  };
+
+  const handleBack = () => {
+    setActiveStep(
+      (prevActiveStep) => (prevActiveStep === 0 ? totalSteps() - 1 : prevActiveStep - 1),
+    );
+  };
+
+  const handleStep = (step) => () => {
+    setActiveStep(step);
+  };
+
+  return (
+    <Box sx={{
+      mt: 1,
+      p: 1,
+      boxShadow: 1,
+    }}
+    >
+      <Stepper nonLinear activeStep={activeStep}>
+        {steps.map((label, index) => (
+          <Step key={label}>
+
+            <StepButton color="inherit" onClick={handleStep(index)}>
+              <StepLabel StepIconComponent={FilterStepIcon}>{label}</StepLabel>
+            </StepButton>
+          </Step>
+        ))}
+      </Stepper>
+      <div>
+        {renderFilter()}
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Button
+            // color="inherit"
+            onClick={handleBack}
+            sx={{ mr: 1 }}
+          >
+            Back
+          </Button>
+          <Box sx={{ flex: '1 1 auto' }} />
+          <Button onClick={handleNext} sx={{ mr: 1 }}>
+            Next
+          </Button>
+        </Box>
+      </div>
+    </Box>
   );
 }
 

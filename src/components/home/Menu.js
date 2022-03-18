@@ -1,31 +1,25 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
+import {
+  AppBar, Box, Toolbar, Stack, Divider, Link,
+} from '../mui';
 
 function Menu() {
   return (
-    // <div className="ui secondary menu">
-    //   <Link to="/" className="item">
-    //     Home
-    //   </Link>
-    //   <Link to="/works" className="item">
-    //     How it works
-    //   </Link>
-    //   <Link to="/about" className="item">
-    //     About
-    //   </Link>
-    // </div>
-    <Nav defaultActiveKey="/" as="ul">
-      <Nav.Item as="li">
-        <Nav.Link href="/">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="/works">How it works</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="/about">About</Nav.Link>
-      </Nav.Item>
-    </Nav>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent">
+        <Toolbar>
+          <Stack
+            direction="row"
+            divider={<Divider orientation="vertical" flexItem />}
+            spacing={2}
+          >
+            <Link href="/" underline="hover" variant="subtitle1"> Home </Link>
+            <Link href="/works" underline="hover" variant="subtitle1"> How it Works </Link>
+            <Link href="/about" underline="hover" variant="subtitle1"> About </Link>
+          </Stack>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 

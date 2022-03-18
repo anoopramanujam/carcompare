@@ -1,8 +1,16 @@
 import React from 'react';
+import { Box, Typography } from '../mui';
 
 function Works() {
   return (
-    <div>This section will explain how points are calculated</div>
+    <Box sx={{
+      m: 1,
+    }}
+    >
+      <Typography>
+        Your choices are derived as follows: TODO
+      </Typography>
+    </Box>
   );
 }
 

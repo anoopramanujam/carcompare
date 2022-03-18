@@ -1,24 +1,31 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
+import { Grid, Box, Typography } from '../mui';
 import '../../globals/Styles.css';
 import './CarCard.css';
 
 function CarCard({ car }) {
   return (
-    <Col>
-      <div className="cc-margin cc-padding cc-border">
-        {car.Make}
-        <div className="cc-title">
+    <Grid item xs={3}>
+      <Box sx={{
+        p: 1, border: 1, borderColor: 'grey.400', borderRadius: 1,
+      }}
+      >
+        <Typography>{car.Make}</Typography>
+        <Typography variant="h6">
           {car.Model}
           {' '}
           {car.Variant}
-        </div>
-        <hr />
-        {car.Price}
-        {' '}
-        Lakhs
-      </div>
-    </Col>
+        </Typography>
+        <Typography>
+          {' '}
+          {car.Price}
+          {' '}
+          Lakhs
+
+        </Typography>
+
+      </Box>
+    </Grid>
   );
 }
 

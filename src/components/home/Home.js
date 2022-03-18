@@ -5,9 +5,7 @@ import Result from '../results/Result';
 function Home() {
   return (
     <div>
-      <hr />
       <Result />
-      <hr />
       <Filters />
     </div>
   );
