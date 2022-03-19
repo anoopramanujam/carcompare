@@ -14,6 +14,7 @@ const steps = ['Specifications', 'Features', 'Preferences'];
 
 const FilterStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   backgroundColor: theme.palette.primary.light,
+  border: 1,
   zIndex: 1,
   color: '#fff',
   width: 50,
