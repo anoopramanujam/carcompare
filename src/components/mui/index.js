@@ -13,3 +13,8 @@ export { default as StepLabel } from '@mui/material/StepLabel';
 export { default as StepButton } from '@mui/material/StepButton';
 export { default as TextField } from '@mui/material/TextField';
 export { default as InputAdornment } from '@mui/material/InputAdornment';
+export { default as Checkbox } from '@mui/material/Checkbox';
+export { default as FormControl } from '@mui/material/FormControl';
+export { default as FormLabel } from '@mui/material/FormLabel';
+export { default as FormGroup } from '@mui/material/FormGroup';
+export { default as FormControlLabel } from '@mui/material/FormControlLabel';
