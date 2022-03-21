@@ -1,7 +1,7 @@
 import { UpdateSpecs } from '../globals/ActionTypes';
 
 const InitialState = {
-  price: 7,
+  price: 15,
 };
 
 export default (state = InitialState, action) => {

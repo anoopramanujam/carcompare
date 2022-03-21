@@ -10,20 +10,24 @@ function CarCard({ car }) {
         p: 1, border: 1, borderColor: 'grey.400', borderRadius: 1,
       }}
       >
-        <Typography>{car.Make}</Typography>
-        <Typography variant="h6">
+        <Typography variant="caption">{car.Make}</Typography>
+        <Typography variant="subtitle2">
           {car.Model}
           {' '}
           {car.Variant}
         </Typography>
-        <Typography>
+        <Typography variant="caption">
+          {' '}
+          {car.Fuel === 'P' ? 'Petrol' : 'Diesel'}
+          {' '}
+          {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
+        </Typography>
+        <Typography variant="body2">
           {' '}
           {car.Price}
           {' '}
           Lakhs
-
         </Typography>
-
       </Box>
     </Grid>
   );
