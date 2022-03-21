@@ -7,7 +7,9 @@ import {
 import { setSpecFilters } from '../../actions';
 
 function SpecFilter(props) {
-  const { price, petrol, diesel } = props.specFilters;
+  const {
+    price, petrol, diesel, manual, auto,
+  } = props.specFilters;
 
   const handleChange = (event) => {
     const { target } = event;
@@ -72,13 +74,13 @@ function SpecFilter(props) {
           <FormGroup row>
             <FormControlLabel
               control={
-                <Checkbox checked={petrol} onChange={handleChange} name="manual" />
+                <Checkbox checked={manual} onChange={handleChange} name="manual" />
             }
               label="Manual"
             />
             <FormControlLabel
               control={
-                <Checkbox checked={diesel} onChange={handleChange} name="auto" />
+                <Checkbox checked={auto} onChange={handleChange} name="auto" />
             }
               label="Automatic"
             />

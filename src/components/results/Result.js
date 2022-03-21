@@ -16,7 +16,7 @@ const findCars = ({ specFilters }) => {
 
   const results = carData.filter((x) => (x.Price <= price)
     && ((x.Fuel === 'P' && petrol) || (x.Fuel === 'D' && diesel))
-    && ((x.Transmission[0] === 'M' && manual) || (x.Transmission[0] === 'A')));
+    && ((x.Transmission[0] === 'M' && manual) || (x.Transmission[0] === 'A' && auto)));
   return results;
 };
 
