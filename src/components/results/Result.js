@@ -3,22 +3,9 @@ import { connect } from 'react-redux';
 import {
   Grid, Box, Typography, Button, Stack,
 } from '../mui';
-import carData from '../../data/carData';
+
 import CarCard from './CarCard';
-
-const findCars = ({ specFilters }) => {
-  console.log(specFilters);
-
-  const price = parseFloat(specFilters.price) || 1000;
-  const {
-    petrol, diesel, manual, auto,
-  } = specFilters;
-
-  const results = carData.filter((x) => (x.Price <= price)
-    && ((x.Fuel === 'P' && petrol) || (x.Fuel === 'D' && diesel))
-    && ((x.Transmission[0] === 'M' && manual) || (x.Transmission[0] === 'A' && auto)));
-  return results;
-};
+import findCars from './FilterLogic';
 
 function Result(props) {
   // console.log(carData);

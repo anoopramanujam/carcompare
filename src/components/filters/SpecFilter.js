@@ -7,9 +7,7 @@ import {
 import { setSpecFilters } from '../../actions';
 
 function SpecFilter(props) {
-  const {
-    price, petrol, diesel, manual, auto,
-  } = props.specFilters;
+  const filters = props.specFilters;
 
   const handleChange = (event) => {
     const { target } = event;
@@ -19,7 +17,6 @@ function SpecFilter(props) {
   };
 
   function renderCheckboxes(title, options) {
-    console.log(options);
     return (
 
       <Grid item xs={12} sm={6} md={4}>
@@ -28,9 +25,14 @@ function SpecFilter(props) {
           {
           options.map((option) => (
             <FormControlLabel
-              control={
-                <Checkbox checked={option.checked} onChange={handleChange} name={option.name} />
-              }
+              key={option.name}
+              control={(
+                <Checkbox
+                  checked={filters[option.name]}
+                  onChange={handleChange}
+                  name={option.name}
+                />
+              )}
               label={option.label}
             />
           ))
@@ -61,7 +63,7 @@ function SpecFilter(props) {
             name="price"
             size="small"
             sx={{ width: '20ch' }}
-            value={price}
+            value={filters.price}
             type="number"
             onChange={handleChange}
             InputProps={{
@@ -71,16 +73,14 @@ function SpecFilter(props) {
           />
         </Grid>
         {renderCheckboxes('Fuel', [
-          { checked: petrol, name: 'petrol', label: 'Petrol' },
-          { checked: diesel, name: 'diesel', label: 'Diesel' }])}
+          { name: 'petrol', label: 'Petrol' },
+          { name: 'diesel', label: 'Diesel' }])}
 
         {renderCheckboxes('Transmission', [
-          { checked: manual, name: 'manual', label: 'Manual' },
-          { checked: auto, name: 'auto', label: 'Automatic' }])}
+          { name: 'manual', label: 'Manual' },
+          { name: 'auto', label: 'Automatic' }])}
 
       </Grid>
-      {/* </Stack> */}
-      {/* </FormControl> */}
     </Box>
   );
 }
