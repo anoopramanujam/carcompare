@@ -1,3 +1,3 @@
-export const UpdateSpecs = 'filter/specs';
-export const UpdateFeatures = 'fiter/features';
-export const UpdatePrefs = 'filter/prefs';
+export const UPDATE_SPECS = 'filter/specs';
+export const UPDATE_FEATURES = 'fiter/features';
+export const UPDATE_PREFS = 'filter/prefs';

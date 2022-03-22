@@ -1,16 +1,13 @@
-import { UPDATE_SPECS } from '../globals/ActionTypes';
+import { UPDATE_FEATURES } from '../globals/ActionTypes';
+import { PREFERRED } from '../globals/Constants';
 
 const InitialState = {
-  price: 15,
-  petrol: true,
-  diesel: true,
-  manual: true,
-  auto: true,
+  alloy: PREFERRED,
 };
 
 export default (state = InitialState, action) => {
   switch (action.type) {
-    case UPDATE_SPECS:
+    case UPDATE_FEATURES:
       return action.payload;
     default:
       return state;

@@ -1,12 +1,11 @@
-import { UpdateSpecs } from '../globals/ActionTypes';
+import { UPDATE_SPECS, UPDATE_FEATURES } from '../globals/ActionTypes';
 
 export const setSpecFilters = (specFilters) => ({
-  type: UpdateSpecs,
+  type: UPDATE_SPECS,
   payload: specFilters,
 });
 
-// to elscape eslint error for now
-export const setFeatureFilter = (price) => ({
-  type: 'FEATURE_FILTER',
-  payload: price,
+export const setFeatureFilters = (featureFilters) => ({
+  type: UPDATE_FEATURES,
+  payload: featureFilters,
 });
