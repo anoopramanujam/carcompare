@@ -3,9 +3,11 @@ import { PREFERRED } from '../globals/Constants';
 
 const InitialState = {
   alloy: PREFERRED,
+  seatAdjust: PREFERRED,
 };
 
 export default (state = InitialState, action) => {
+  // console.log(action);
   switch (action.type) {
     case UPDATE_FEATURES:
       return action.payload;

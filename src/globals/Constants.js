@@ -16,4 +16,5 @@ export const NO = 'N';
 export const COL = {
   points: 'Points',
   alloy: 'Alloy Wheels',
+  seatAdjust: 'Driver Seat Adjust',
 };

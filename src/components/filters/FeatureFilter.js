@@ -6,16 +6,19 @@ import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
   Radio, RadioGroup, FormControl, FormControlLabel, FormLabel,
 } from '../mui';
-import { REQUIRED, IGNORE, PREFERRED } from '../../globals/Constants';
+import {
+  REQUIRED, IGNORE, PREFERRED, COL,
+} from '../../globals/Constants';
 import { setFeatureFilters } from '../../actions';
 
 function FeatureFilter(props) {
   const filters = props.featureFilters;
+
   const handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
-    props.setFeatureFilters({ ...props.specFilters, [name]: value });
+    props.setFeatureFilters({ ...props.featureFilters, [name]: value });
   };
   function renderAccordion(parts) {
     const [expanded, setExpanded] = React.useState(false);
@@ -43,7 +46,7 @@ function FeatureFilter(props) {
             <AccordionDetails>
               {part.options.map((option) => (
                 <FormControl key={option.name}>
-                  <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+                  <FormLabel id="demo-radio-buttons-group-label">{option.label}</FormLabel>
                   <RadioGroup
                     row
                     name={option.name}
@@ -73,8 +76,8 @@ function FeatureFilter(props) {
     >
       <Typography>Feature Filter</Typography>
       {renderAccordion([
-        { label: 'Interior', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
-        { label: 'Exterior', options: [] },
+        { label: 'Exterior', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
+        { label: 'Interior', options: [{ label: 'Driver Seat Adjust', name: 'seatAdjust' }] },
         { label: 'Comfort', options: [] }])}
     </Box>
   );

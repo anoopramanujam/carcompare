@@ -8,13 +8,13 @@ import CarCard from './CarCard';
 import findCars from './FilterLogic';
 
 function Result(props) {
-  console.log(props);
+  // console.log(props);
   const [showAll, setShowAll] = useState(false);
   let resultData = findCars({
     specFilters: props.specFilters,
     featureFilters: props.featureFilters,
   });
-  resultData.map((car) => console.log(car.Variant, car.Points));
+  // resultData.map((car) => console.log(car.Variant, car.Points));
   const totalCount = resultData.length;
   if (totalCount === 0) {
     return (
