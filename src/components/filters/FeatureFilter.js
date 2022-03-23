@@ -4,12 +4,24 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
-  Radio, RadioGroup, FormControl, FormControlLabel, FormLabel,
+  Radio, RadioGroup, FormControl, FormControlLabel, FormLabel, Grid,
 } from '../mui';
 import {
   REQUIRED, IGNORE, PREFERRED, COL,
 } from '../../globals/Constants';
 import { setFeatureFilters } from '../../actions';
+
+const filterLabels = [
+  { label: 'Exterior', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
+  {
+    label: 'Interior',
+    options: [
+      { label: 'Driver Seat Adjust', name: 'seatAdjust' },
+      { label: 'Android Auto / Apple CarPlay', name: 'androidCar' },
+      { label: 'Power Windows', name: 'powerWindows' },
+    ],
+  },
+  { label: 'Comfort', options: [] }];
 
 function FeatureFilter(props) {
   const filters = props.featureFilters;
@@ -44,22 +56,30 @@ function FeatureFilter(props) {
               {/* <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography> */}
             </AccordionSummary>
             <AccordionDetails>
-              {part.options.map((option) => (
-                <FormControl key={option.name}>
-                  <FormLabel id="demo-radio-buttons-group-label">{option.label}</FormLabel>
-                  <RadioGroup
-                    row
-                    name={option.name}
-                    value={filters[option.name]}
-                    onChange={handleChange}
-                  >
-                    <FormControlLabel value={REQUIRED} control={<Radio />} label="Required" />
-                    <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
-                    <FormControlLabel value={IGNORE} control={<Radio />} label="Not Needed" />
-                  </RadioGroup>
-                </FormControl>
-              ))}
-
+              <Grid
+                container
+                direction="row"
+                justifyContent="between"
+                spacing={1}
+              >
+                {part.options.map((option) => (
+                  <Grid item xs={12} sm={6} md={4} key={option.name}>
+                    {/* <FormControl> */}
+                    <FormLabel id="demo-radio-buttons-group-label">{option.label}</FormLabel>
+                    <RadioGroup
+                      row
+                      name={option.name}
+                      value={filters[option.name]}
+                      onChange={handleChange}
+                    >
+                      <FormControlLabel value={REQUIRED} control={<Radio />} label="Required" />
+                      <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
+                      <FormControlLabel value={IGNORE} control={<Radio />} label="Not Needed" />
+                    </RadioGroup>
+                    {/* </FormControl> */}
+                  </Grid>
+                ))}
+              </Grid>
             </AccordionDetails>
           </Accordion>
         ))}
@@ -68,17 +88,14 @@ function FeatureFilter(props) {
     );
   }
 
-  console.log(props);
+  // console.log(props);
   return (
     <Box sx={{
       m: 1, p: 1, border: 1, borderColor: 'grey.400',
     }}
     >
       <Typography>Feature Filter</Typography>
-      {renderAccordion([
-        { label: 'Exterior', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
-        { label: 'Interior', options: [{ label: 'Driver Seat Adjust', name: 'seatAdjust' }] },
-        { label: 'Comfort', options: [] }])}
+      {renderAccordion(filterLabels)}
     </Box>
   );
 }

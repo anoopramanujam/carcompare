@@ -1,9 +1,9 @@
 import {
-  REQUIRED, PREFERRED, IGNORE, YES, COL,
+  REQUIRED, PREFERRED, IGNORE, YES, NO, COL,
 } from '../../globals/Constants';
 
 function checkCar(car, featureFilters) {
-  const features = ['alloy', 'seatAdjust'];
+  const features = ['alloy', 'seatAdjust', 'androidCar', 'powerWindows'];
   const result = { ...car, [COL.points]: 0 };
   // console.log(car, featureFilters);
   for (let i = 0; i < features.length; i += 1) {
@@ -11,7 +11,8 @@ function checkCar(car, featureFilters) {
     // console.log('Processing', feature);
     if (featureFilters[feature] === REQUIRED) {
       // console.log(feature, 'is required', car[COL[feature]]);
-      if (car[COL[feature]] === YES) {
+      if ((car[COL[feature]] !== NO) && (car[COL[feature]] !== '')) {
+        // console.log('ok');
         result[COL.points] += 1;
         // return result;
       } else {

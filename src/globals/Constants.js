@@ -17,4 +17,6 @@ export const COL = {
   points: 'Points',
   alloy: 'Alloy Wheels',
   seatAdjust: 'Driver Seat Adjust',
+  androidCar: 'Android Car Play',
+  powerWindows: 'Power Windows',
 };

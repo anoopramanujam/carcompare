@@ -8,7 +8,7 @@ import CarCard from './CarCard';
 import findCars from './FilterLogic';
 
 function Result(props) {
-  // console.log(props);
+  console.log('Render', props);
   const [showAll, setShowAll] = useState(false);
   let resultData = findCars({
     specFilters: props.specFilters,
@@ -40,7 +40,7 @@ function Result(props) {
       </Typography>
       <Grid container spacing={2}>
         { resultData.map((car) => (
-          <React.Fragment key={`${car.Make}-${car.Model}-${car.Variant}-${car.Price}`}>
+          <React.Fragment key={`${car.Id}`}>
             <CarCard car={car} />
           </React.Fragment>
         ))}

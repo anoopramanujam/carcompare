@@ -4,6 +4,8 @@ import { PREFERRED } from '../globals/Constants';
 const InitialState = {
   alloy: PREFERRED,
   seatAdjust: PREFERRED,
+  androidCar: PREFERRED,
+  powerWindows: PREFERRED,
 };
 
 export default (state = InitialState, action) => {
