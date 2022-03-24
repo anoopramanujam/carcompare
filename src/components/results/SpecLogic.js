@@ -1,3 +1,5 @@
+import { COL } from '../../globals/Constants';
+
 const filterSpecs = (data, specFilters) => {
   // console.log(specFilters);
 
@@ -6,9 +8,9 @@ const filterSpecs = (data, specFilters) => {
     petrol, diesel, manual, auto,
   } = specFilters;
 
-  const results = data.filter((x) => (x.Price <= price)
-    && ((x.Fuel === 'P' && petrol) || (x.Fuel === 'D' && diesel))
-    && ((x.Transmission[0] === 'M' && manual) || (x.Transmission[0] === 'A' && auto)));
+  const results = data.filter((x) => (x[COL.price] <= price)
+    && ((x[COL.fuel] === 'P' && petrol) || (x[COL.fuel] === 'D' && diesel))
+    && ((x[COL.transmission][0] === 'M' && manual) || (x[COL.transmission][0] === 'A' && auto)));
   return results;
 };
 

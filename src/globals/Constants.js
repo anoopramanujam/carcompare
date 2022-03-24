@@ -15,6 +15,9 @@ export const NO = 'N';
 
 export const COL = {
   points: 'Points',
+  price: 'Price',
+  fuel: 'Fuel',
+  transmission: 'Transmission',
   alloy: 'Alloy Wheels',
   seatAdjust: 'Driver Seat Adjust',
   androidCar: 'Android Car Play',
