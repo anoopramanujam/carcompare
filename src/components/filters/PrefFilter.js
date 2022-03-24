@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup,
+  Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup, Checkbox,
 } from '../mui';
 import { COL } from '../../globals/Constants';
 import { setPrefFilters } from '../../actions/index';
+import carData from '../../data/carData';
 
 function PrefFilter(props) {
   const options = [COL.price, COL.power];
@@ -16,6 +17,22 @@ function PrefFilter(props) {
     const { name } = target;
     props.setPrefFilters({ ...props.prefFilters, [name]: value });
   };
+
+  const handleMakes = (event) => {
+    const { target } = event;
+    const { name } = target;
+    let makeFilters = filters.makes;
+    console.log(makeFilters);
+    if (target.checked && !makeFilters.includes(name)) {
+      makeFilters.push(name);
+    } else if (!target.checked && makeFilters.includes(name)) {
+      makeFilters = makeFilters.filter((make) => make !== name);
+    }
+    console.log(makeFilters);
+    props.setPrefFilters({ ...props.prefFilters, makes: makeFilters });
+  };
+
+  const availableMakes = [...new Set(carData.map((item) => item.Make))];
 
   return (
     <Box sx={{
@@ -40,6 +57,26 @@ function PrefFilter(props) {
         }
       </RadioGroup>
       {' '}
+
+      <FormLabel component="legend" justify="center" sx={{ pt: 1 }}>Show only </FormLabel>
+      <FormGroup row>
+        {
+          availableMakes.map((make) => (
+            <FormControlLabel
+              key={make}
+              control={(
+                <Checkbox
+                  checked={filters.makes.includes(make)}
+                  onChange={handleMakes}
+                  name={make}
+                />
+              )}
+              label={make}
+            />
+          ))
+
+        }
+      </FormGroup>
 
     </Box>
   );

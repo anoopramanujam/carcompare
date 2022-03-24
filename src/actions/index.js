@@ -10,7 +10,10 @@ export const setFeatureFilters = (featureFilters) => ({
   payload: featureFilters,
 });
 
-export const setPrefFilters = (prefFilters) => ({
-  type: UPDATE_PREFS,
-  payload: prefFilters,
-});
+export const setPrefFilters = (prefFilters) => {
+  console.log(prefFilters);
+  return ({
+    type: UPDATE_PREFS,
+    payload: prefFilters,
+  });
+};

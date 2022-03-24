@@ -15,6 +15,7 @@ export const NO = 'N';
 
 export const COL = {
   points: 'Points',
+  make: 'Make',
   price: 'Price',
   fuel: 'Fuel',
   transmission: 'Transmission',
