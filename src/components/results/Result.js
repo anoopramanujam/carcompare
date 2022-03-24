@@ -13,6 +13,7 @@ function Result(props) {
   let resultData = findCars({
     specFilters: props.specFilters,
     featureFilters: props.featureFilters,
+    prefFilters: props.prefFilters,
   });
   // resultData.map((car) => console.log(car.Variant, car.Points));
   const totalCount = resultData.length;
@@ -59,6 +60,7 @@ function Result(props) {
 const mapStateToProps = (state) => ({
   specFilters: state.specFilters,
   featureFilters: state.featureFilters,
+  prefFilters: state.prefFilters,
 });
 
 export default connect(mapStateToProps)(Result);

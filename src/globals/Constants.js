@@ -18,6 +18,7 @@ export const COL = {
   price: 'Price',
   fuel: 'Fuel',
   transmission: 'Transmission',
+  power: 'Output',
   alloy: 'Alloy Wheels',
   seatAdjust: 'Driver Seat Adjust',
   androidCar: 'Android Car Play',

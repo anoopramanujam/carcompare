@@ -3,10 +3,12 @@ import carData from '../../data/carData';
 
 import filterSpecs from './SpecLogic';
 import filterFeatures from './FeatureLogic';
+import filterPrefs from './PrefLogic';
 
-const findCars = ({ specFilters, featureFilters }) => {
+const findCars = ({ specFilters, featureFilters, prefFilters }) => {
   const specResults = filterSpecs(carData, specFilters);
-  return filterFeatures(specResults, featureFilters);
+  const featureResults = filterFeatures(specResults, featureFilters);
+  return filterPrefs(featureResults, prefFilters);
 };
 
 export default findCars;
