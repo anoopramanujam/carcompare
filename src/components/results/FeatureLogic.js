@@ -19,7 +19,8 @@ function checkCar(car, featureFilters) {
         return false;
       }
     } else
-    if (featureFilters[feature] === PREFERRED && car[COL[feature]] === YES) {
+    if (featureFilters[feature] === PREFERRED
+      && ((car[COL[feature]] !== NO) && (car[COL[feature]] !== ''))) {
       result[COL.points] += 1;
     }
     // return result;

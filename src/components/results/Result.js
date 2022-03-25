@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   Grid, Box, Typography, Button, Stack,
 } from '../mui';
+import { COL } from '../../globals/Constants';
 
 import CarCard from './CarCard';
 import findCars from './FilterLogic';
@@ -30,6 +31,19 @@ function Result(props) {
   }
   const makeCount = [...new Set(resultData.map((item) => item.Make))].length;
   const modelCount = [...new Set(resultData.map((item) => item.Model))].length;
+
+  // get max value
+  const max = {};
+  for (let j = 0; j < resultData.length; j += 1) {
+    const cols = [COL.mileage, COL.points, COL.power];
+    const car = resultData[j];
+    for (let k = 0; k < cols.length; k += 1) {
+      const col = cols[k];
+      max[col] = Math.max(max[col] || 0, car[col]);
+    }
+  }
+  console.log(max);
+
   if (!showAll) {
     resultData = resultData.slice(0, 8);
   }
@@ -37,16 +51,35 @@ function Result(props) {
   const countLabel = `${makeCount} Make${appendS(makeCount)}, 
                         ${modelCount} Model${appendS(modelCount)}, 
                         ${totalCount} Variant${appendS(totalCount)}`;
+  // const legend = 'Lines represent relative ,  and ';
 
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
       <Typography variant="subtitle2">
         {countLabel}
       </Typography>
+      <Typography variant="caption" display="inline">
+        Lines represent relative
+      </Typography>
+      <Typography variant="caption" display="inline" color="error.main">
+        {' '}
+        Power (Red)
+      </Typography>
+      <Typography variant="caption" display="inline" color="success.main">
+        {' '}
+        Mileage (Green)
+      </Typography>
+      <Typography variant="caption" display="inline">
+        {' and '}
+      </Typography>
+      <Typography variant="caption" display="inline" color="info.main">
+        {' '}
+        Features (Blue)
+      </Typography>
       <Grid container spacing={2}>
         { resultData.map((car) => (
           <React.Fragment key={`${car.Id}`}>
-            <CarCard car={car} />
+            <CarCard car={car} maxValues={max} />
           </React.Fragment>
         ))}
       </Grid>

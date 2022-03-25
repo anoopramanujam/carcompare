@@ -1,9 +1,15 @@
 import React from 'react';
-import { Grid, Box, Typography } from '../mui';
+import {
+  Grid, Box, Typography, LinearProgress,
+} from '../mui';
+import { COL } from '../../globals/Constants';
 import '../../globals/Styles.css';
 import './CarCard.css';
 
-function CarCard({ car }) {
+function CarCard({ car, maxValues }) {
+  const mileagePct = Math.floor((car.Mileage * 100) / maxValues[COL.mileage]);
+  const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
+  const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
   return (
     <Grid item xs={3}>
       <Box sx={{
@@ -28,6 +34,9 @@ function CarCard({ car }) {
           {' '}
           Lakhs
         </Typography>
+        <LinearProgress color="info" variant="determinate" value={featurePct} sx={{ mb: 1 }} />
+        <LinearProgress color="success" variant="determinate" value={mileagePct} sx={{ mb: 1 }} />
+        <LinearProgress color="error" variant="determinate" value={powerPct} sx={{ }} />
       </Box>
     </Grid>
   );
