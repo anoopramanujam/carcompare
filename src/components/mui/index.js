@@ -24,3 +24,4 @@ export { default as AccordionSummary } from '@mui/material/AccordionSummary';
 export { default as RadioGroup } from '@mui/material/RadioGroup';
 export { default as Radio } from '@mui/material/Radio';
 export { default as LinearProgress } from '@mui/material/LinearProgress';
+export { default as CircularProgress } from '@mui/material/CircularProgress';

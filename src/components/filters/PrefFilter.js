@@ -8,7 +8,7 @@ import { setPrefFilters } from '../../actions/index';
 // import carData from '../../data/carData';
 
 function PrefFilter(props) {
-  const options = [COL.price, COL.power];
+  const options = [COL.price, COL.power, COL.mileage, COL.vfm];
   const filters = props.prefFilters;
   // console.log('PrefFilter', props);
   if (filters.makes === null) {
