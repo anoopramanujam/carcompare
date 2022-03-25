@@ -1,3 +1,4 @@
+import { Circle } from '@mui/icons-material';
 import {
   REQUIRED, PREFERRED, IGNORE, YES, NO, COL,
 } from '../../globals/Constants';
@@ -26,6 +27,7 @@ function checkCar(car, featureFilters) {
     // return result;
   }
   // console.log('returning false');
+  result[COL.vfm] = result[COL.points] / result[COL.price];
   return result;
 }
 

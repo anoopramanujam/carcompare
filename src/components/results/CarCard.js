@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Grid, Box, Typography, LinearProgress,
 } from '../mui';
@@ -6,14 +6,28 @@ import { COL } from '../../globals/Constants';
 import '../../globals/Styles.css';
 import './CarCard.css';
 
-function CarCard({ car, maxValues }) {
+function CarCard({ car, maxValues, onSelect }) {
+  const [selected, setSelected] = useState(false);
   const mileagePct = Math.floor((car.Mileage * 100) / maxValues[COL.mileage]);
   const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
   const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
+
+  const select = () => {
+    setSelected(!selected);
+    onSelect({ selectedCar: car, selected: !selected });
+  };
   return (
-    <Grid item xs={3}>
+    <Grid
+      item
+      xs={3}
+      onClick={() => { select(); }}
+    >
       <Box sx={{
-        p: 1, border: 1, borderColor: 'grey.400', borderRadius: 1,
+        p: 1,
+        border: selected ? 2 : 1,
+        borderColor: selected ? 'primary.light' : 'grey.400',
+        backgroundColor: selected ? 'grey.200' : 'common.white',
+        borderRadius: 1,
       }}
       >
         <Typography variant="caption">{car.Make}</Typography>

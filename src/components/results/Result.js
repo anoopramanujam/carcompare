@@ -15,6 +15,7 @@ function Result(props) {
   if (props.prefFilters.makes === null) return null;
   // console.log('NO NULL');
   const [showAll, setShowAll] = useState(false);
+  const [selectedCars, setSelectedCars] = useState([]);
   let resultData = findCars(cars, {
     specFilters: props.specFilters,
     featureFilters: props.featureFilters,
@@ -53,6 +54,18 @@ function Result(props) {
                         ${totalCount} Variant${appendS(totalCount)}`;
   // const legend = 'Lines represent relative ,  and ';
 
+  function selectCar({ selectedCar, selected }) {
+    console.log(selected, selectedCar);
+    let sel;
+    if (selected) {
+      sel = [...selectedCars];
+      sel.push(selectedCar);
+    } else {
+      sel = selectedCars.filter((car) => car.Id !== selectedCar.Id);
+    }
+    setSelectedCars(sel);
+  }
+  console.log('Selected:', selectedCars);
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
       <Typography variant="subtitle2">
@@ -79,7 +92,11 @@ function Result(props) {
       <Grid container spacing={2}>
         { resultData.map((car) => (
           <React.Fragment key={`${car.Id}`}>
-            <CarCard car={car} maxValues={max} />
+            <CarCard
+              car={car}
+              maxValues={max}
+              onSelect={({ selectedCar, selected }) => selectCar({ selectedCar, selected })}
+            />
           </React.Fragment>
         ))}
       </Grid>
