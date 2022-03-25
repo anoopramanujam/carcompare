@@ -4,7 +4,7 @@ const filterPrefs = (data, prefFilters) => {
   const {
     sortBy, makes,
   } = prefFilters;
-
+  // console.log(prefFilters);
   let results = [...data];
 
   results = data.filter((car) => makes.includes(car[COL.make]));

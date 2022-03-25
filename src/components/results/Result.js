@@ -9,8 +9,12 @@ import findCars from './FilterLogic';
 
 function Result(props) {
   console.log('Render', props);
+  const { cars } = props.globalData;
+  if (!cars) return null;
+  if (props.prefFilters.makes === null) return null;
+  // console.log('NO NULL');
   const [showAll, setShowAll] = useState(false);
-  let resultData = findCars({
+  let resultData = findCars(cars, {
     specFilters: props.specFilters,
     featureFilters: props.featureFilters,
     prefFilters: props.prefFilters,
@@ -61,6 +65,7 @@ const mapStateToProps = (state) => ({
   specFilters: state.specFilters,
   featureFilters: state.featureFilters,
   prefFilters: state.prefFilters,
+  globalData: state.globalData,
 });
 
 export default connect(mapStateToProps)(Result);

@@ -5,11 +5,20 @@ import {
 } from '../mui';
 import { COL } from '../../globals/Constants';
 import { setPrefFilters } from '../../actions/index';
-import carData from '../../data/carData';
+// import carData from '../../data/carData';
 
 function PrefFilter(props) {
   const options = [COL.price, COL.power];
   const filters = props.prefFilters;
+  // console.log('PrefFilter', props);
+  if (filters.makes === null) {
+    // filters.makes = [...new Set(props.globalData.cars.map((item) => item.Make))];
+    props.setPrefFilters({
+      ...props.prefFilters,
+      makes: [...new Set(props.globalData.cars.map((item) => item.Make))],
+    });
+    return null;
+  }
 
   const handleChange = (event) => {
     const { target } = event;
@@ -22,17 +31,17 @@ function PrefFilter(props) {
     const { target } = event;
     const { name } = target;
     let makeFilters = filters.makes;
-    console.log(makeFilters);
+    // console.log(makeFilters);
     if (target.checked && !makeFilters.includes(name)) {
       makeFilters.push(name);
     } else if (!target.checked && makeFilters.includes(name)) {
       makeFilters = makeFilters.filter((make) => make !== name);
     }
-    console.log(makeFilters);
+    // console.log(makeFilters);
     props.setPrefFilters({ ...props.prefFilters, makes: makeFilters });
   };
 
-  const availableMakes = [...new Set(carData.map((item) => item.Make))];
+  const availableMakes = [...new Set(props.globalData.cars.map((item) => item.Make))];
 
   return (
     <Box sx={{
@@ -82,6 +91,9 @@ function PrefFilter(props) {
   );
 }
 
-const mapStateToProps = (state) => ({ prefFilters: state.prefFilters });
+const mapStateToProps = (state) => ({
+  prefFilters: state.prefFilters,
+  globalData: state.globalData,
+});
 
 export default connect(mapStateToProps, { setPrefFilters })(PrefFilter);

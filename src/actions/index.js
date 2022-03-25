@@ -1,4 +1,6 @@
-import { UPDATE_SPECS, UPDATE_FEATURES, UPDATE_PREFS } from '../globals/ActionTypes';
+import {
+  UPDATE_SPECS, UPDATE_FEATURES, UPDATE_PREFS, LOAD_CARS,
+} from '../globals/ActionTypes';
 
 export const setSpecFilters = (specFilters) => ({
   type: UPDATE_SPECS,
@@ -10,10 +12,12 @@ export const setFeatureFilters = (featureFilters) => ({
   payload: featureFilters,
 });
 
-export const setPrefFilters = (prefFilters) => {
-  console.log(prefFilters);
-  return ({
-    type: UPDATE_PREFS,
-    payload: prefFilters,
-  });
-};
+export const setPrefFilters = (prefFilters) => ({
+  type: UPDATE_PREFS,
+  payload: prefFilters,
+});
+
+export const loadCars = (carsData) => ({
+  type: LOAD_CARS,
+  payload: carsData,
+});
