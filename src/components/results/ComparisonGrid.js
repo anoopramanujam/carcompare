@@ -1,8 +1,12 @@
 import React from 'react';
 
-import { DataGrid } from '@mui/x-data-grid';
-import { Container, Box, Typography } from '../mui';
+// import { DataGrid } from '@mui/x-data-grid';
+import {
+  Container, Box, Typography, Paper,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
+} from '../mui';
 import { COL } from '../../globals/Constants';
+import './Grid.css';
 
 function ComparisonGrid({ cars }) {
   console.log('Cars', cars);
@@ -10,13 +14,13 @@ function ComparisonGrid({ cars }) {
     return null;
   }
 
-  const cols = [{ field: 'id', headerName: 'Feature', sortable: false }];
+  const cols = [{ id: 'id', label: '', minWidth: 100 }];
   const carIds = ['id'];
   for (let i = 0; i < cars.length; i += 1) {
     const car = cars[i];
     // console.log(car);
     cols.push({
-      field: car.Id, minWidth: 150, sortable: false, headerName: `${car[COL.make]} ${car[COL.model]}`,
+      id: car.Id, minWidth: 150, label: `${car[COL.make]} ${car[COL.model]}`,
     });
     carIds.push(car.Id);
   }
@@ -49,22 +53,62 @@ function ComparisonGrid({ cars }) {
   // //   }
   // }
 
-  console.log('Rows', rows);
+  console.log('Rows1', rows);
   return (
-    <DataGrid
-      rows={rows}
-      columns={cols}
-      rowCount={featuresToProcess.length + 2}
-      // pageSize={5}
-      // rowsPerPageOptions={[5]}
-      disableColumnFilter
-      disableColumnMenu
-      disableColumnSelectors
-      disableSelectionOnClick
-      sortable={false}
-      editMode={false}
 
-    />
+  // <Paper sx={{ overflow: 'auto' }}>
+    <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
+      <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+          <TableRow>
+            {cols.map((column) => (
+              <TableCell
+                key={column.id}
+                align={column.align}
+                className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
+                style={{ minWidth: column.minWidth }}
+                // sx={{ bgcolor: 'blue' }}
+                sx={{
+                //   position: `${column.id === 'id' ? 'sticky' : 'relative'}`,
+                  background: `${column.id === 'id' ? 'white' : ''}`,
+                  zIndex: `${column.id === 'id' ? 10 : 1}`,
+                }}
+              >
+                {column.label}
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows
+            .map((row) => (
+              <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                {cols.map((column) => {
+                  const value = row[column.id];
+                  return (
+                    <TableCell
+                      key={column.id}
+                      align={column.align}
+                      className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
+                      sx={{
+                        position: `${column.id === 'id' ? 'sticky' : ''}`,
+                        background: `${column.id === 'id' ? 'white' : ''}`,
+                        zIndex: `${column.id === 'id' ? 10 : 1}`,
+                      }}
+                    >
+                      {column.format && typeof value === 'number'
+                        ? column.format(value)
+                        : value}
+                    </TableCell>
+                  );
+                })}
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  // </Paper>
+
   );
 }
 

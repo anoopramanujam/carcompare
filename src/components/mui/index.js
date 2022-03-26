@@ -26,3 +26,13 @@ export { default as Radio } from '@mui/material/Radio';
 export { default as LinearProgress } from '@mui/material/LinearProgress';
 export { default as Modal } from '@mui/material/Modal';
 export { default as Container } from '@mui/material/Container';
+export { default as Table } from '@mui/material/Table';
+export { default as TableBody } from '@mui/material/TableBody';
+export { default as TableCell } from '@mui/material/TableCell';
+export { default as TableContainer } from '@mui/material/TableContainer';
+export { default as TableHead } from '@mui/material/TableHead';
+export { default as TableRow } from '@mui/material/TableRow';
+export { default as Paper } from '@mui/material/Paper';
+
+// export { default as TableHead } '@mui/material/TableHead';
+// export { default as TableRow } '@mui/material/TableRow';

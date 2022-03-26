@@ -79,9 +79,10 @@ function Result(props) {
           top: '50%',
           left: '50%',
           width: '90%',
-          height: 400,
+          height: '90%',
           p: 1,
           border: 1,
+          // overflow: 'auto',
         }}
         >
           <ComparisonGrid cars={selectedCars} />
