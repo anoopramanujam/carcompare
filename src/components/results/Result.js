@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {
-  Grid, Box, Typography, Button, Stack,
+  Grid, Box, Typography, Button, Stack, Modal,
 } from '../mui';
 import { COL } from '../../globals/Constants';
 
 import CarCard from './CarCard';
 import findCars from './FilterLogic';
+import ComparisonGrid from './ComparisonGrid';
 
 function Result(props) {
   console.log('Render', props);
@@ -15,6 +16,7 @@ function Result(props) {
   if (props.prefFilters.makes === null) return null;
   // console.log('NO NULL');
   const [showAll, setShowAll] = useState(false);
+  const [showComparison, setComparison] = useState(false);
   const [selectedCars, setSelectedCars] = useState([]);
   let resultData = findCars(cars, {
     specFilters: props.specFilters,
@@ -55,7 +57,7 @@ function Result(props) {
   // const legend = 'Lines represent relative ,  and ';
 
   function selectCar({ selectedCar, selected }) {
-    console.log(selected, selectedCar);
+    // console.log(selected, selectedCar);
     let sel;
     if (selected) {
       sel = [...selectedCars];
@@ -65,9 +67,26 @@ function Result(props) {
     }
     setSelectedCars(sel);
   }
-  console.log('Selected:', selectedCars);
+  // console.log('Selected:', selectedCars);
+
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
+      <Modal open={showComparison} onClose={() => setComparison(false)}>
+        <Box sx={{
+          bgcolor: 'background.paper',
+          position: 'absolute',
+          transform: 'translate(-50%, -50%)',
+          top: '50%',
+          left: '50%',
+          width: '90%',
+          height: 400,
+          p: 1,
+          border: 1,
+        }}
+        >
+          <ComparisonGrid cars={selectedCars} />
+        </Box>
+      </Modal>
       <Typography variant="subtitle2">
         {countLabel}
       </Typography>
@@ -89,6 +108,14 @@ function Result(props) {
         {' '}
         Features (Blue)
       </Typography>
+      <Typography variant="caption" display="inline">. Click on items below and</Typography>
+      <Button
+        onClick={() => setComparison(true)}
+        disabled={selectedCars.length === 0}
+      >
+        Compare
+
+      </Button>
       <Grid container spacing={2}>
         { resultData.map((car) => (
           <React.Fragment key={`${car.Id}`}>
@@ -104,7 +131,7 @@ function Result(props) {
         <Button onClick={() => { console.log(showAll); setShowAll(!showAll); }}>
           Show
           {' '}
-          {showAll ? 'Top 8' : 'All'}
+          {showAll ? 'Less' : 'All'}
         </Button>
       </Stack>
     </Box>

@@ -17,6 +17,7 @@ export const COL = {
   points: 'Points',
   vfm: 'Value for money',
   make: 'Make',
+  model: 'Model',
   price: 'Price',
   fuel: 'Fuel',
   transmission: 'Transmission',
