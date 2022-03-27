@@ -6,8 +6,8 @@
 
 ### Features
 
-* Includes over 50 cars available in India
-* Filter by specs and over 30 features
+* WILL include over 50 cars available in India
+* WILL Filter by specs and over 30 features
 * Always free, opens-source and ad-free!
 
 ### Coming Soon
