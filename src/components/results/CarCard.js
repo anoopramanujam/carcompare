@@ -3,7 +3,7 @@ import {
   Grid, Box, Typography, LinearProgress,
 } from '../mui';
 import { COL } from '../../globals/Constants';
-import '../../globals/Styles.css';
+import '../../globals/styles.css';
 import './CarCard.css';
 
 function CarCard({ car, maxValues, onSelect }) {
