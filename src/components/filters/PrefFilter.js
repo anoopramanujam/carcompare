@@ -5,14 +5,13 @@ import {
 } from '../mui';
 import { COL } from '../../globals/Constants';
 import { setPrefFilters } from '../../actions/index';
-// import carData from '../../data/carData';
 
 function PrefFilter(props) {
   const options = [COL.price, COL.power, COL.mileage, COL.vfm];
   const filters = props.prefFilters;
-  // console.log('PrefFilter', props);
+
+  // to be used when ajax is implemented and prefFilter makes are initialized to null
   if (filters.makes === null) {
-    // filters.makes = [...new Set(props.globalData.cars.map((item) => item.Make))];
     props.setPrefFilters({
       ...props.prefFilters,
       makes: [...new Set(props.globalData.cars.map((item) => item.Make))],
@@ -31,16 +30,15 @@ function PrefFilter(props) {
     const { target } = event;
     const { name } = target;
     let makeFilters = filters.makes;
-    // console.log(makeFilters);
     if (target.checked && !makeFilters.includes(name)) {
       makeFilters.push(name);
     } else if (!target.checked && makeFilters.includes(name)) {
       makeFilters = makeFilters.filter((make) => make !== name);
     }
-    // console.log(makeFilters);
     props.setPrefFilters({ ...props.prefFilters, makes: makeFilters });
   };
 
+  // select distinct makes
   const availableMakes = [...new Set(props.globalData.cars.map((item) => item.Make))];
 
   return (

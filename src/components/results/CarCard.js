@@ -12,10 +12,12 @@ function CarCard({ car, maxValues, onSelect }) {
   const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
   const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
 
+  // select/unselect a card
   const select = () => {
     setSelected(!selected);
     onSelect({ selectedCar: car, selected: !selected });
   };
+
   return (
     <Grid
       item

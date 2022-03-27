@@ -12,9 +12,11 @@ import ComparisonGrid from './ComparisonGrid';
 function Result(props) {
   console.log('Render', props);
   const { cars } = props.globalData;
+
+  // Need this only for ajax car load
   if (!cars) return null;
   if (props.prefFilters.makes === null) return null;
-  // console.log('NO NULL');
+
   const [showAll, setShowAll] = useState(false);
   const [showComparison, setComparison] = useState(false);
   const [selectedCars, setSelectedCars] = useState([]);
@@ -23,7 +25,6 @@ function Result(props) {
     featureFilters: props.featureFilters,
     prefFilters: props.prefFilters,
   });
-  // resultData.map((car) => console.log(car.Variant, car.Points));
   const totalCount = resultData.length;
   if (totalCount === 0) {
     return (
@@ -35,7 +36,7 @@ function Result(props) {
   const makeCount = [...new Set(resultData.map((item) => item.Make))].length;
   const modelCount = [...new Set(resultData.map((item) => item.Model))].length;
 
-  // get max value
+  // get max values to calculate the color lines renders
   const max = {};
   for (let j = 0; j < resultData.length; j += 1) {
     const cols = [COL.mileage, COL.points, COL.power];
@@ -45,7 +46,6 @@ function Result(props) {
       max[col] = Math.max(max[col] || 0, car[col]);
     }
   }
-  console.log(max);
 
   if (!showAll) {
     resultData = resultData.slice(0, 8);
@@ -54,10 +54,8 @@ function Result(props) {
   const countLabel = `${makeCount} Make${appendS(makeCount)}, 
                         ${modelCount} Model${appendS(modelCount)}, 
                         ${totalCount} Variant${appendS(totalCount)}`;
-  // const legend = 'Lines represent relative ,  and ';
 
   function selectCar({ selectedCar, selected }) {
-    // console.log(selected, selectedCar);
     let sel;
     if (selected) {
       sel = [...selectedCars];
@@ -67,7 +65,6 @@ function Result(props) {
     }
     setSelectedCars(sel);
   }
-  // console.log('Selected:', selectedCars);
 
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
@@ -82,7 +79,6 @@ function Result(props) {
           height: '90%',
           p: 1,
           border: 1,
-          // overflow: 'auto',
         }}
         >
           <ComparisonGrid cars={selectedCars} />

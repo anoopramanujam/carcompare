@@ -50,7 +50,7 @@ function FilterStepIcon(props) {
 }
 
 function Filters() {
-  const [activeStep, setActiveStep] = React.useState(2);
+  const [activeStep, setActiveStep] = React.useState(0);
 
   const totalSteps = () => steps.length;
   const isLastStep = () => activeStep === totalSteps() - 1;

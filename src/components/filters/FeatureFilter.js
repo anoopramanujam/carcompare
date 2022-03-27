@@ -1,27 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
 import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
-  Radio, RadioGroup, FormControl, FormControlLabel, FormLabel, Grid,
+  Radio, RadioGroup, FormControlLabel, FormLabel, Grid,
 } from '../mui';
 import {
   REQUIRED, IGNORE, PREFERRED, COL,
 } from '../../globals/Constants';
 import { setFeatureFilters } from '../../actions';
 
+// All the features to be shwon
 const filterLabels = [
-  { label: 'Exterior', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
+  { label: 'Exterior', description: 'Headlamps, Wheels...', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
   {
     label: 'Interior',
+    description: 'Seats, Windows...',
     options: [
       { label: 'Driver Seat Adjust', name: 'seatAdjust' },
       { label: 'Android Auto / Apple CarPlay', name: 'androidCar' },
       { label: 'Power Windows', name: 'powerWindows' },
     ],
   },
-  { label: 'Comfort', options: [] }];
+  { label: 'Comfort', description: 'AC, Audio...', options: [] },
+  { label: 'Safety', description: 'Airbags, Sensors...', options: [] },
+
+];
 
 function FeatureFilter(props) {
   const filters = props.featureFilters;
@@ -32,6 +36,7 @@ function FeatureFilter(props) {
     const { name } = target;
     props.setFeatureFilters({ ...props.featureFilters, [name]: value });
   };
+
   function renderAccordion(parts) {
     const [expanded, setExpanded] = React.useState(false);
 
@@ -53,7 +58,8 @@ function FeatureFilter(props) {
               <Typography sx={{ width: '33%', flexShrink: 0 }}>
                 {part.label}
               </Typography>
-              {/* <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography> */}
+              <Typography sx={{ color: 'text.secondary' }}>{part.description}</Typography>
+
             </AccordionSummary>
             <AccordionDetails>
               <Grid
@@ -74,9 +80,8 @@ function FeatureFilter(props) {
                     >
                       <FormControlLabel value={REQUIRED} control={<Radio />} label="Required" />
                       <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
-                      <FormControlLabel value={IGNORE} control={<Radio />} label="Not Needed" />
+                      <FormControlLabel value={IGNORE} control={<Radio />} label="Not Concerned" />
                     </RadioGroup>
-                    {/* </FormControl> */}
                   </Grid>
                 ))}
               </Grid>
@@ -88,7 +93,6 @@ function FeatureFilter(props) {
     );
   }
 
-  // console.log(props);
   return (
     <Box sx={{
       m: 1, p: 1, border: 1, borderColor: 'grey.400',

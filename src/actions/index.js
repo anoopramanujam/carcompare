@@ -17,6 +17,7 @@ export const setPrefFilters = (prefFilters) => ({
   payload: prefFilters,
 });
 
+// Not used now!
 export const loadCars = (carsData) => ({
   type: LOAD_CARS,
   payload: carsData,

@@ -11,7 +11,7 @@ export const IGNORE = 'Ignore';
 export const PREFERRED = 'Prefer';
 
 export const YES = 'Y';
-export const NO = 'N';
+export const NO = '-';
 
 export const COL = {
   points: 'Points',
@@ -25,6 +25,6 @@ export const COL = {
   mileage: 'Mileage',
   alloy: 'Alloy Wheels',
   seatAdjust: 'Driver Seat Adjust',
-  androidCar: 'Android Car Play',
+  androidCar: 'Android CarPlay',
   powerWindows: 'Power Windows',
 };

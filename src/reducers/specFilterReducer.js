@@ -9,8 +9,6 @@ const InitialState = {
 };
 
 export default (state = InitialState, action) => {
-  // console.log(action);
-
   switch (action.type) {
     case UPDATE_SPECS:
       return action.payload;

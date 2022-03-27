@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  Box, Typography, TextField, InputAdornment, Checkbox,
-  FormControl, FormLabel, FormGroup, FormControlLabel, Stack, Grid,
+  Box, TextField, InputAdornment, Checkbox,
+  FormLabel, FormGroup, FormControlLabel, Grid,
 } from '../mui';
 import { setSpecFilters } from '../../actions';
 

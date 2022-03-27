@@ -33,6 +33,3 @@ export { default as TableContainer } from '@mui/material/TableContainer';
 export { default as TableHead } from '@mui/material/TableHead';
 export { default as TableRow } from '@mui/material/TableRow';
 export { default as Paper } from '@mui/material/Paper';
-
-// export { default as TableHead } '@mui/material/TableHead';
-// export { default as TableRow } '@mui/material/TableRow';

@@ -18,18 +18,14 @@ function ComparisonGrid({ cars }) {
   const carIds = ['id'];
   for (let i = 0; i < cars.length; i += 1) {
     const car = cars[i];
-    // console.log(car);
     cols.push({
       id: car.Id, minWidth: 150, label: `${car[COL.make]} ${car[COL.model]}`,
     });
     carIds.push(car.Id);
   }
-  console.log('Cols', cols);
+
   const rows = [];
-  // const transposed = Object.assign(...Object.keys(cars[0]).map((key) => (
-  //   { [key]: cars.map((o) => o[key]) })));
-  // console.log('Transposed', transposed);
-  // const carsIds = transposed.Id;
+
   const featuresToProcess = ['Make', 'Model', 'Price'];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
@@ -41,22 +37,8 @@ function ComparisonGrid({ cars }) {
     rows.push(featureSet);
   }
 
-  // [
-  //   { Feature: 'Price', Maruti-Celerio-1: ItsPrice, Maruti-Cel-2: JisPrice
-  // ]
-
-  // for (let k = 0; k < carIds.length; k += 1) {
-  //   const carId = carIds[k];
-  // //   const rowCol = {};
-  // //   for (const carColumn in transposed) {
-  // //     rowCol[carid] =
-  // //   }
-  // }
-
-  console.log('Rows1', rows);
   return (
 
-  // <Paper sx={{ overflow: 'auto' }}>
     <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
       <Table stickyHeader aria-label="sticky table">
         <TableHead>
@@ -67,9 +49,7 @@ function ComparisonGrid({ cars }) {
                 align={column.align}
                 className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
                 style={{ minWidth: column.minWidth }}
-                // sx={{ bgcolor: 'blue' }}
                 sx={{
-                //   position: `${column.id === 'id' ? 'sticky' : 'relative'}`,
                   background: `${column.id === 'id' ? 'white' : ''}`,
                   zIndex: `${column.id === 'id' ? 10 : 1}`,
                 }}
@@ -107,7 +87,6 @@ function ComparisonGrid({ cars }) {
         </TableBody>
       </Table>
     </TableContainer>
-  // </Paper>
 
   );
 }

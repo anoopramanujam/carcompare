@@ -1,8 +1,6 @@
 import { COL } from '../../globals/Constants';
 
 const filterSpecs = (data, specFilters) => {
-  // console.log(specFilters);
-
   const price = parseFloat(specFilters.price) || 1000;
   const {
     petrol, diesel, manual, auto,
