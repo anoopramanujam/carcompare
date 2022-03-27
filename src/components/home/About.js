@@ -1,14 +1,19 @@
 import React from 'react';
+import { Box, Typography } from '../mui';
 
-class About extends React.PureComponent {
-  render() {
-    return (
-      <div>
+function About() {
+  return (
+    <Box sx={{
+      m: 1,
+    }}
+    >
+      <Typography>
         This is an open source project hosted at
+        {' '}
         <a href="https://github.com/anoopramanujam/carcompare"> Github</a>
-      </div>
-    );
-  }
+      </Typography>
+    </Box>
+  );
 }
 
 export default About;
