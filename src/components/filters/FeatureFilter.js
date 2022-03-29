@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
-  Radio, RadioGroup, FormControlLabel, FormLabel, Grid,
+  Radio, RadioGroup, FormControlLabel, FormLabel, Grid, FormHelperText,
 } from '../mui';
 import {
   REQUIRED, IGNORE, PREFERRED,
@@ -24,7 +24,7 @@ const filterLabels = [
     label: 'Interior',
     description: 'Seats, Windows...',
     options: [
-      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust },
+      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust, helper: 'Driver Height' },
       { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
       { label: 'Power Windows', name: COL.powerWindows },
     ],
@@ -89,6 +89,7 @@ function FeatureFilter(props) {
                       <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
                       <FormControlLabel value={IGNORE} control={<Radio />} label="Not Concerned" />
                     </RadioGroup>
+                    {option.helper && <FormHelperText>{option.helper}</FormHelperText>}
                   </Grid>
                 ))}
               </Grid>
