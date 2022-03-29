@@ -12,14 +12,20 @@ import { setFeatureFilters } from '../../actions';
 
 // All the features to be shwon
 const filterLabels = [
-  { label: 'Exterior', description: 'Headlamps, Wheels...', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
+  {
+    label: 'Exterior',
+    description: 'Headlamps, Wheels...',
+    options: [
+      { label: 'Alloy Wheels', name: COL.alloyWheels },
+    ],
+  },
   {
     label: 'Interior',
     description: 'Seats, Windows...',
     options: [
-      { label: 'Driver Seat Adjust', name: 'seatAdjust' },
-      { label: 'Android Auto / Apple CarPlay', name: 'androidCar' },
-      { label: 'Power Windows', name: 'powerWindows' },
+      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust },
+      { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
+      { label: 'Power Windows', name: COL.powerWindows },
     ],
   },
   { label: 'Comfort', description: 'AC, Audio...', options: [] },

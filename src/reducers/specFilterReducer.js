@@ -1,7 +1,7 @@
 import { UPDATE_SPECS } from '../globals/ActionTypes';
 
 const InitialState = {
-  price: 15,
+  price: 25,
   petrol: true,
   diesel: true,
   manual: true,

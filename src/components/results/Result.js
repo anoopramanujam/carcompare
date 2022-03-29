@@ -12,7 +12,7 @@ import ComparisonGrid from './ComparisonGrid';
 function Result(props) {
   console.log('Render', props);
   const { cars } = props.globalData;
-
+  // console.log('Cars', cars);
   // Need this only for ajax car load
   if (!cars) return null;
   if (props.prefFilters.makes === null) return null;

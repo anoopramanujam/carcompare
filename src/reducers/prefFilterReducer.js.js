@@ -3,7 +3,7 @@ import { COL } from '../globals/Constants';
 import carData from '../data/carData';
 
 const InitialState = {
-  sortBy: COL.price,
+  sortBy: COL.vfm,
   makes: [...new Set(carData.map((item) => item.Make))],
 };
 

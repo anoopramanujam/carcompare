@@ -4,21 +4,23 @@ import {
 } from '../../globals/Constants';
 
 function checkCar(car, featureFilters) {
-  const features = ['alloy', 'seatAdjust', 'androidCar', 'powerWindows'];
+  const features = [
+    COL.alloyWheels, COL.driverSeatAdjust, COL.androidPlay, COL.powerWindows];
   const result = { ...car, [COL.points]: 0 };
+  console.log(featureFilters);
   for (let i = 0; i < features.length; i += 1) {
     const feature = features[i];
 
     // Ensure required features are present
     if (featureFilters[feature] === REQUIRED) {
-      if ((car[COL[feature]] !== NO) && (car[COL[feature]] !== '')) {
+      if ((car[feature] !== NO) && (car[feature] !== '')) {
         result[COL.points] += 1;
       } else {
         return false;
       }
     } else // Add points if preferred features are present
     if (featureFilters[feature] === PREFERRED
-      && ((car[COL[feature]] !== NO) && (car[COL[feature]] !== ''))) {
+      && ((car[feature] !== NO) && (car[feature] !== ''))) {
       result[COL.points] += 1;
     }
   }
