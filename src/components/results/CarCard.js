@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Grid, Box, Typography, LinearProgress,
 } from '../mui';
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 import '../../globals/styles.css';
 import './CarCard.css';
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   Grid, Box, Typography, Button, Stack, Modal,
 } from '../mui';
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 
 import CarCard from './CarCard';
 import findCars from './FilterLogic';

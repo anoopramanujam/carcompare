@@ -6,8 +6,9 @@ import {
   Radio, RadioGroup, FormControlLabel, FormLabel, Grid,
 } from '../mui';
 import {
-  REQUIRED, IGNORE, PREFERRED, COL,
+  REQUIRED, IGNORE, PREFERRED,
 } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 import { setFeatureFilters } from '../../actions';
 
 // All the features to be shwon

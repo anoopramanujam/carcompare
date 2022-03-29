@@ -1,5 +1,6 @@
 import { UPDATE_FEATURES } from '../globals/ActionTypes';
-import { PREFERRED, COL } from '../globals/Constants';
+import { PREFERRED } from '../globals/Constants';
+import * as COL from '../globals/ColConstants';
 
 const InitialState = {
   [COL.alloyWheels]: PREFERRED,

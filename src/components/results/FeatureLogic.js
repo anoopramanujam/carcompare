@@ -1,7 +1,9 @@
 import { Circle } from '@mui/icons-material';
 import {
-  REQUIRED, PREFERRED, IGNORE, YES, NO, COL,
+  REQUIRED, PREFERRED, IGNORE, YES, NO,
 } from '../../globals/Constants';
+
+import * as COL from '../../globals/ColConstants';
 
 function checkCar(car, featureFilters) {
   const features = [

@@ -1,4 +1,4 @@
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 
 const filterSpecs = (data, specFilters) => {
   const price = parseFloat(specFilters.price) || 1000;

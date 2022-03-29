@@ -1,5 +1,5 @@
 import { UPDATE_PREFS } from '../globals/ActionTypes';
-import { COL } from '../globals/Constants';
+import * as COL from '../globals/ColConstants';
 import carData from '../data/carData';
 
 const InitialState = {

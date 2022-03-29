@@ -5,7 +5,7 @@ import {
   Container, Box, Typography, Paper,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
 } from '../mui';
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 import './Grid.css';
 
 function ComparisonGrid({ cars }) {
