@@ -14,7 +14,7 @@ export const kerbWeight = 'Kerb Weight';
 export const power = 'Power';
 export const torque = 'Torque';
 export const mileage = 'Mileage';
-export const bodyType = 'BodyType';
+export const bodyType = 'Body Type';
 export const length = 'Length';
 export const width = 'Width';
 export const height = 'Height';
@@ -56,7 +56,7 @@ export const trunkLight = 'Trunk Light';
 
 // Comfort
 export const speakers = 'Speakers';
-export const androidPlay = 'Android Auto / Apple CarPlay';
+export const androidPlay = 'Android Auto Apple CarPlay';
 export const powerWindowsOneTouch = 'Power Windows One Touch';
 export const powerWindowsRemote = 'Power Windows Remote';
 export const rearSunshade = 'Rear Sunshade';

@@ -4,6 +4,7 @@ import {
   Grid, Box, Typography, Button, Stack, Modal,
 } from '../mui';
 import * as COL from '../../globals/ColConstants';
+import { RESULTSIZE } from '../../globals/Constants';
 
 import CarCard from './CarCard';
 import findCars from './FilterLogic';
@@ -48,7 +49,7 @@ function Result(props) {
   }
 
   if (!showAll) {
-    resultData = resultData.slice(0, 8);
+    resultData = resultData.slice(0, RESULTSIZE);
   }
   const appendS = (count) => (count !== 1 ? 's' : '');
   const countLabel = `${makeCount} Make${appendS(makeCount)}, 

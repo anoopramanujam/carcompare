@@ -21,7 +21,9 @@ function CarCard({ car, maxValues, onSelect }) {
   return (
     <Grid
       item
-      xs={3}
+      xs={6}
+      sm={4}
+      md={2}
       onClick={() => { select(); }}
     >
       <Box sx={{

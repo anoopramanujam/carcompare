@@ -1,5 +1,7 @@
 export const TITLE = 'Car Compare';
 
+export const RESULTSIZE = 6;
+
 export const FilterSteps = {
   Specs: 'Specs',
   Features: 'Features',

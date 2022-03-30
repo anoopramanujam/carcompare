@@ -76,6 +76,12 @@ function SpecFilter(props) {
             Ex-showroom Delhi price
           </FormHelperText>
         </Grid>
+        {renderCheckboxes('Body Type', [
+          { name: 'hatch', label: 'Hatch' },
+          { name: 'sedan', label: 'Sedan' },
+          { name: 'suv', label: 'SUV' },
+        ])}
+
         {renderCheckboxes('Fuel', [
           { name: 'petrol', label: 'Petrol' },
           { name: 'diesel', label: 'Diesel' }])}

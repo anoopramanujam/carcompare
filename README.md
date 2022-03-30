@@ -7,11 +7,13 @@
 ### Features
 
 * WILL include over 50 cars available in India
-* WILL Filter by specs and over 30 features
+* WILL Filter by specs and over 50 features
 * Always free, opens-source and ad-free!
 
-### Coming Soon
+#### Following cars to be included soon:
 
-* Wizard selection on first load, to preselect filters
-* Electric vehicles
+* Maruti Dzire
+* Maruti WagonR
+* Maruti Baleno
+* Maruti Alto 
 
