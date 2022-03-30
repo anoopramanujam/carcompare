@@ -10,7 +10,7 @@ const InitialState = {
 };
 
 export default (state = InitialState, action) => {
-  console.log(state);
+  // console.log(state);
   switch (action.type) {
     case UPDATE_FEATURES:
       return action.payload;

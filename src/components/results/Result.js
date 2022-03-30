@@ -82,7 +82,8 @@ function Result(props) {
           border: 1,
         }}
         >
-          <ComparisonGrid cars={selectedCars} />
+          {/* <Button onClick={() => setComparison(false)}>Close</Button> */}
+          <ComparisonGrid cars={selectedCars} onClose={() => setComparison(false)} />
         </Box>
       </Modal>
       <Typography variant="subtitle2">

@@ -9,7 +9,7 @@ function checkCar(car, featureFilters) {
   const features = [
     COL.alloyWheels, COL.driverSeatAdjust, COL.androidPlay, COL.powerWindows];
   const result = { ...car, [COL.points]: 0 };
-  console.log(featureFilters);
+  // console.log(featureFilters);
   for (let i = 0; i < features.length; i += 1) {
     const feature = features[i];
 

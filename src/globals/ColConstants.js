@@ -1,4 +1,5 @@
 // Internal
+export const id = 'Id';
 export const points = 'Points';
 export const vfm = 'Value for money';
 

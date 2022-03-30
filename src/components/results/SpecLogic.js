@@ -7,8 +7,6 @@ const filterSpecs = (data, specFilters) => {
     hatch, sedan, suv,
     petrol, diesel, manual, auto,
   } = specFilters;
-  console.log(data);
-  console.log(COL.bodyType);
   const results = data.filter((x) => (x[COL.price] <= price)
     && ((x[COL.fuel] === 'P' && petrol) || (x[COL.fuel] === 'D' && diesel))
     && (
