@@ -45,6 +45,8 @@ function ComparisonGrid({ cars, onClose }) {
     COL.length, COL.width, COL.height, COL.wheelbase,
     COL.groundClearance, COL.turningRadius, COL.bootSpace,
     COL.tyres, COL.fuelTank,
+    COL.daytimeRunningLamps, COL.projectorHeadLamps, COL.automaticHeadlightControl,
+    COL.fogLamps, COL.rainSensingWipers, COL.alloyWheels,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];

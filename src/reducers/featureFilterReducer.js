@@ -7,6 +7,11 @@ const InitialState = {
   [COL.driverSeatAdjust]: PREFERRED,
   [COL.androidPlay]: PREFERRED,
   [COL.powerWindows]: PREFERRED,
+  [COL.daytimeRunningLamps]: PREFERRED,
+  [COL.automaticHeadlightControl]: PREFERRED,
+  [COL.projectorHeadLamps]: PREFERRED,
+  [COL.fogLamps]: PREFERRED,
+  [COL.rainSensingWipers]: PREFERRED,
 };
 
 export default (state = InitialState, action) => {

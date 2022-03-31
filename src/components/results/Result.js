@@ -90,11 +90,11 @@ function Result(props) {
         {countLabel}
       </Typography>
       <Typography variant="caption" display="inline">
-        Lines represent relative
+        Colored lines represent relative
       </Typography>
-      <Typography variant="caption" display="inline" color="error.main">
+      <Typography variant="caption" display="inline" color="info.main">
         {' '}
-        Power (Red)
+        Features (Blue)
       </Typography>
       <Typography variant="caption" display="inline" color="success.main">
         {' '}
@@ -103,9 +103,9 @@ function Result(props) {
       <Typography variant="caption" display="inline">
         {' and '}
       </Typography>
-      <Typography variant="caption" display="inline" color="info.main">
+      <Typography variant="caption" display="inline" color="error.main">
         {' '}
-        Features (Blue)
+        Power (Red)
       </Typography>
       <Typography variant="caption" display="inline">. Click on items below and</Typography>
       <Button

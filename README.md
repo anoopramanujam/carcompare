@@ -3,6 +3,7 @@
 ### Introduction
 
 *Car Compare* will help you in your search to find the best cars for you.
+Live at https://carcompare.pages.dev/
 
 ### Features
 
@@ -12,7 +13,6 @@
 
 #### Following cars to be included soon:
 
-* Maruti Dzire
 * Maruti WagonR
 * Maruti Baleno
 * Maruti Alto 

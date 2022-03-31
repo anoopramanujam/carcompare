@@ -17,6 +17,11 @@ const filterLabels = [
     label: 'Exterior',
     description: 'Headlamps, Wheels...',
     options: [
+      { label: 'Daytime Running Lamps', name: COL.daytimeRunningLamps },
+      { label: 'Projector Headlamps', name: COL.projectorHeadLamps, helper: 'More brighter, and low glare to others' },
+      { label: 'Automatic Headlight Control', name: COL.automaticHeadlightControl, helper: 'Switches on automatically when ambient light is low' },
+      { label: 'Foglamps', name: COL.fogLamps },
+      { label: 'Rain-sensing Wipers', name: COL.rainSensingWipers, helper: 'Switches on automatically when it rains' },
       { label: 'Alloy Wheels', name: COL.alloyWheels },
     ],
   },
@@ -24,7 +29,7 @@ const filterLabels = [
     label: 'Interior',
     description: 'Seats, Windows...',
     options: [
-      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust, helper: 'Driver Height' },
+      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust, helper: 'Adjust driver seat height' },
       { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
       { label: 'Power Windows', name: COL.powerWindows },
     ],
