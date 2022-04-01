@@ -13,7 +13,15 @@ Live at https://carcompare.pages.dev/
 
 #### Following cars to be included soon:
 
-* Maruti WagonR
-* Maruti Baleno
 * Maruti Alto 
+* Hyundai Venue
+* Hyundai Creta
+* Tata Punch
+* Maruti Vitara Brezza
+* Hyundai Grand i10
+* Maruti S-Presso
+* Kia Seltos
+* Kia Sonet
+* Hyundai i20
+* Kia Carens
 
