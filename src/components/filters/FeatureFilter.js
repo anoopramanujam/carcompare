@@ -29,12 +29,29 @@ const filterLabels = [
     label: 'Interior',
     description: 'Seats, Windows...',
     options: [
-      { label: 'Driver Seat Adjust', name: COL.driverSeatAdjust, helper: 'Adjust driver seat height' },
-      { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
       { label: 'Power Windows', name: COL.powerWindows },
+      { label: 'Driver Height Adjust', name: COL.driverSeatAdjust, helper: 'Adjust driver seat height' },
+      { label: 'Electically Foldable ORVMs', name: COL.electFoldableMirrors },
+      { label: 'Electrically Adjustable ORVMs', name: COL.electAdjustableMirrors },
+      { label: 'Auto-dimming IRVM', name: COL.autoDimmingIrvm, helper: 'Reduce glare on rear view mirrors at night' },
+      { label: 'Tilt Steering Adjust', name: COL.tiltSteeringAdjust, helper: 'Adjust steering up/down for maximum driver comfort' },
+      { label: 'Front Armrest', name: COL.frontArmrest },
+      { label: 'Rear Armrest', name: COL.rearArmrest },
+      { label: 'Sun Roof', name: COL.sunRoof },
+      { label: 'Rear AC Vents', name: COL.rearAcVents },
+      { label: 'Rear Defogger', name: COL.rearDefogger },
+      { label: 'Rear Seat-split', name: COL.rearSeatSplit },
+      { label: 'Trunk Light', name: COL.trunkLight },
     ],
   },
-  { label: 'Comfort', description: 'AC, Audio...', options: [] },
+  {
+    label: 'Comfort',
+    description: 'AC, Audio...',
+    options: [
+      { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
+
+    ],
+  },
   { label: 'Safety', description: 'Airbags, Sensors...', options: [] },
 
 ];
@@ -50,7 +67,7 @@ function FeatureFilter(props) {
   };
 
   function renderAccordion(parts) {
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = React.useState('Interior');
 
     const handleAccordionChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);

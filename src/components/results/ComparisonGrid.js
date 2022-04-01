@@ -47,6 +47,12 @@ function ComparisonGrid({ cars, onClose }) {
     COL.tyres, COL.fuelTank,
     COL.daytimeRunningLamps, COL.projectorHeadLamps, COL.automaticHeadlightControl,
     COL.fogLamps, COL.rainSensingWipers, COL.alloyWheels,
+
+    COL.powerWindows, COL.driverSeatAdjust, COL.electFoldableMirrors,
+    COL.electAdjustableMirrors, COL.autoDimmingIrvm, COL.tiltSteeringAdjust,
+    COL.frontArmrest, COL.rearArmrest, COL.sunRoof,
+    COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit,
+    COL.trunkLight,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
@@ -74,6 +80,8 @@ function ComparisonGrid({ cars, onClose }) {
       switch (feature) {
         case COL.bodyType: if (displayValue === HATCH) { displayValue = 'Hatch'; } else if (displayValue === SEDAN) { displayValue = 'Sedan'; }
           break;
+        case COL.powerWindows: if (displayValue === 'F') { displayValue = 'Front only'; } else if (displayValue === 'FR') { displayValue = 'Both'; }
+          break;
         default: break;
       }
       featureSet[thisCar.Id] = displayValue;
@@ -84,7 +92,7 @@ function ComparisonGrid({ cars, onClose }) {
   return (
     <>
       <Box sx={{
-        p: 2,
+        p: 1,
         position: 'fixed',
         zIndex: 999,
         background: 'white',

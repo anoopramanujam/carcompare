@@ -7,9 +7,13 @@ import * as COL from '../../globals/ColConstants';
 
 function checkCar(car, featureFilters) {
   const features = [
-    COL.alloyWheels, COL.daytimeRunningLamps, COL.projectorHeadLamps, COL.automaticHeadlightControl,
-    COL.fogLamps, COL.rainSensingWipers,
-    COL.driverSeatAdjust, COL.androidPlay, COL.powerWindows];
+    COL.alloyWheels, COL.daytimeRunningLamps, COL.projectorHeadLamps,
+    COL.automaticHeadlightControl, COL.fogLamps, COL.rainSensingWipers,
+    COL.driverSeatAdjust, COL.androidPlay, COL.powerWindows,
+    COL.electFoldableMirrors, COL.electAdjustableMirrors, COL.autoDimmingIrvm,
+    COL.tiltSteeringAdjust, COL.frontArmrest, COL.sunRoof, COL.rearArmrest,
+    COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit, COL.trunkLight,
+  ];
   const result = { ...car, [COL.points]: 0 };
   // console.log(featureFilters);
   for (let i = 0; i < features.length; i += 1) {
