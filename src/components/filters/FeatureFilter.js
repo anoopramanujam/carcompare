@@ -49,6 +49,19 @@ const filterLabels = [
     description: 'AC, Audio...',
     options: [
       { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
+      { label: 'Steering Mounted Controls', name: COL.steeringMountedControl },
+      { label: 'Heads-up Display', name: COL.headsUpDisplay, helper: 'Display basic information in front windshield' },
+      { label: 'One-Touch Power Windows', name: COL.powerWindowsOneTouch, helper: 'Single touch to open/close driver windows' },
+      { label: 'Power Windows Remote', name: COL.powerWindowsRemote, helper: 'Open/close windows by key' },
+      { label: 'Rear Sunshade', name: COL.rearSunshade },
+      { label: 'Follow-Me Headlamps', name: COL.followMeHomeLights, helper: 'Headlamps stay on for a few minutes more' },
+      { label: 'Wireless Charging', name: COL.wirelessCharging },
+      { label: 'Cooled Glove Box', name: COL.cooledGloveBox },
+      { label: 'Climate Control', name: COL.climateControl },
+      { label: 'Remote Keyless Entry', name: COL.remoteKeylessEntry },
+      { label: 'Push Start', name: COL.pushStart },
+      { label: 'Cruise Control', name: COL.cruiseControl },
+      { label: 'Ventilated Front Seats', name: COL.ventilatedFrontSeats },
 
     ],
   },
@@ -67,7 +80,7 @@ function FeatureFilter(props) {
   };
 
   function renderAccordion(parts) {
-    const [expanded, setExpanded] = React.useState('Interior');
+    const [expanded, setExpanded] = React.useState('Comfort');
 
     const handleAccordionChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);

@@ -37,6 +37,7 @@ export const alloyWheels = 'Alloy Wheels';
 
 // Interior
 export const powerWindows = 'Power Windows';
+export const headsUpDisplay = 'Head Up Display';
 export const electFoldableMirrors = 'Elect. Foldable External Mirrors';
 export const electAdjustableMirrors = 'Elect. Adjustable External Mirrors';
 export const autoDimmingIrvm = 'Auto Dimming IRVM';

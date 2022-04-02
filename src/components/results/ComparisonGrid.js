@@ -53,6 +53,12 @@ function ComparisonGrid({ cars, onClose }) {
     COL.frontArmrest, COL.rearArmrest, COL.sunRoof,
     COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit,
     COL.trunkLight,
+
+    COL.speakers, COL.androidPlay, COL.headsUpDisplay,
+    COL.powerWindowsOneTouch, COL.rearSunshade, COL.followMeHomeLights,
+    COL.wirelessCharging, COL.cooledGloveBox, COL.climateControl,
+    COL.pushStart, COL.remoteKeylessEntry, COL.cruiseControl,
+    COL.ventilatedFrontSeats, COL.steeringMountedControl,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];

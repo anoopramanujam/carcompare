@@ -9,10 +9,15 @@ function checkCar(car, featureFilters) {
   const features = [
     COL.alloyWheels, COL.daytimeRunningLamps, COL.projectorHeadLamps,
     COL.automaticHeadlightControl, COL.fogLamps, COL.rainSensingWipers,
-    COL.driverSeatAdjust, COL.androidPlay, COL.powerWindows,
+    COL.driverSeatAdjust, COL.powerWindows,
     COL.electFoldableMirrors, COL.electAdjustableMirrors, COL.autoDimmingIrvm,
     COL.tiltSteeringAdjust, COL.frontArmrest, COL.sunRoof, COL.rearArmrest,
     COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit, COL.trunkLight,
+    COL.androidPlay, COL.steeringMountedControl, COL.headsUpDisplay,
+    COL.powerWindowsOneTouch, COL.powerWindowsRemote, COL.rearSunshade,
+    COL.followMeHomeLights, COL.wirelessCharging, COL.cooledGloveBox,
+    COL.climateControl, COL.remoteKeylessEntry, COL.pushStart,
+    COL.cruiseControl, COL.ventilatedFrontSeats,
   ];
   const result = { ...car, [COL.points]: 0 };
   // console.log(featureFilters);
