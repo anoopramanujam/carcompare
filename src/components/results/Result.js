@@ -21,6 +21,7 @@ function Result(props) {
   const [showAll, setShowAll] = useState(false);
   const [showComparison, setComparison] = useState(false);
   const [selectedCars, setSelectedCars] = useState([]);
+  const itemsSelected = selectedCars.length;
   let resultData = findCars(cars, {
     specFilters: props.specFilters,
     featureFilters: props.featureFilters,
@@ -67,6 +68,35 @@ function Result(props) {
     setSelectedCars(sel);
   }
 
+  function renderResultLegend() {
+    return (
+      <>
+        <Typography variant="subtitle2">
+          {countLabel}
+        </Typography>
+        <Typography variant="caption" display="inline">
+          Colored lines represent relative
+        </Typography>
+        <Typography variant="caption" display="inline" color="info.main">
+          {' '}
+          Features (Blue)
+        </Typography>
+        <Typography variant="caption" display="inline" color="success.main">
+          {' '}
+          Mileage (Green)
+        </Typography>
+        <Typography variant="caption" display="inline">
+          {' and '}
+        </Typography>
+        <Typography variant="caption" display="inline" color="error.main">
+          {' '}
+          Power (Red)
+        </Typography>
+
+      </>
+    );
+  }
+
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
       <Modal open={showComparison} onClose={() => setComparison(false)}>
@@ -86,35 +116,38 @@ function Result(props) {
           <ComparisonGrid cars={selectedCars} onClose={() => setComparison(false)} />
         </Box>
       </Modal>
-      <Typography variant="subtitle2">
-        {countLabel}
-      </Typography>
-      <Typography variant="caption" display="inline">
-        Colored lines represent relative
-      </Typography>
-      <Typography variant="caption" display="inline" color="info.main">
-        {' '}
-        Features (Blue)
-      </Typography>
-      <Typography variant="caption" display="inline" color="success.main">
-        {' '}
-        Mileage (Green)
-      </Typography>
-      <Typography variant="caption" display="inline">
-        {' and '}
-      </Typography>
-      <Typography variant="caption" display="inline" color="error.main">
-        {' '}
-        Power (Red)
-      </Typography>
+      {renderResultLegend()}
       <Typography variant="caption" display="inline">. Click on items below and</Typography>
       <Button
         onClick={() => setComparison(true)}
-        disabled={selectedCars.length === 0}
+        disabled={itemsSelected === 0}
+        display="inline"
       >
         Compare
-
       </Button>
+      {
+        itemsSelected > 0
+        && (
+          <>
+            <Typography variant="caption">
+              {' '}
+              <strong>{itemsSelected}</strong>
+              {' '}
+              car
+              {itemsSelected > 1 ? 's' : ''}
+              {' '}
+              selected.
+            </Typography>
+            <Button
+              onClick={() => setSelectedCars([])}
+              // display="inline"
+            >
+              Unselect All
+            </Button>
+
+          </>
+        )
+      }
       <Grid container spacing={2}>
         { resultData.map((car) => (
           <React.Fragment key={`${car.Id}`}>
@@ -122,6 +155,7 @@ function Result(props) {
               car={car}
               maxValues={max}
               onSelect={({ selectedCar, selected }) => selectCar({ selectedCar, selected })}
+              isSelected={selectedCars.some((c) => c.Id === car.Id)}
             />
           </React.Fragment>
         ))}
