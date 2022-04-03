@@ -3,27 +3,84 @@ import { connect } from 'react-redux';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
-  Radio, RadioGroup, FormControlLabel, FormLabel, Grid,
+  Radio, RadioGroup, FormControlLabel, FormLabel, Grid, FormHelperText,
 } from '../mui';
 import {
-  REQUIRED, IGNORE, PREFERRED, COL,
+  REQUIRED, IGNORE, PREFERRED,
 } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 import { setFeatureFilters } from '../../actions';
 
 // All the features to be shwon
 const filterLabels = [
-  { label: 'Exterior', description: 'Headlamps, Wheels...', options: [{ label: 'Alloy Wheels', name: 'alloy' }] },
+  {
+    label: 'Exterior',
+    description: 'Headlamps, Wheels...',
+    options: [
+      { label: 'Daytime Running Lamps', name: COL.daytimeRunningLamps },
+      { label: 'Projector Headlamps', name: COL.projectorHeadLamps, helper: 'More brighter, and low glare to others' },
+      { label: 'Automatic Headlight Control', name: COL.automaticHeadlightControl, helper: 'Switches on automatically when ambient light is low' },
+      { label: 'Foglamps', name: COL.fogLamps },
+      { label: 'Rain-sensing Wipers', name: COL.rainSensingWipers, helper: 'Switches on automatically when it rains' },
+      { label: 'Alloy Wheels', name: COL.alloyWheels },
+    ],
+  },
   {
     label: 'Interior',
     description: 'Seats, Windows...',
     options: [
-      { label: 'Driver Seat Adjust', name: 'seatAdjust' },
-      { label: 'Android Auto / Apple CarPlay', name: 'androidCar' },
-      { label: 'Power Windows', name: 'powerWindows' },
+      { label: 'Power Windows', name: COL.powerWindows },
+      { label: 'Driver Height Adjust', name: COL.driverSeatAdjust, helper: 'Adjust driver seat height' },
+      { label: 'Electically Foldable ORVMs', name: COL.electFoldableMirrors },
+      { label: 'Electrically Adjustable ORVMs', name: COL.electAdjustableMirrors },
+      { label: 'Auto-dimming IRVM', name: COL.autoDimmingIrvm, helper: 'Reduce glare on rear view mirrors at night' },
+      { label: 'Tilt Steering Adjust', name: COL.tiltSteeringAdjust, helper: 'Adjust steering up/down for maximum driver comfort' },
+      { label: 'Front Armrest', name: COL.frontArmrest },
+      { label: 'Rear Armrest', name: COL.rearArmrest },
+      { label: 'Sun Roof', name: COL.sunRoof },
+      { label: 'Rear AC Vents', name: COL.rearAcVents },
+      { label: 'Rear Defogger', name: COL.rearDefogger },
+      { label: 'Rear Seat-split', name: COL.rearSeatSplit },
+      { label: 'Trunk Light', name: COL.trunkLight },
     ],
   },
-  { label: 'Comfort', description: 'AC, Audio...', options: [] },
-  { label: 'Safety', description: 'Airbags, Sensors...', options: [] },
+  {
+    label: 'Comfort',
+    description: 'AC, Audio...',
+    options: [
+      { label: 'Android Auto / Apple CarPlay', name: COL.androidPlay },
+      { label: 'Steering Mounted Controls', name: COL.steeringMountedControl },
+      { label: 'Heads-up Display', name: COL.headsUpDisplay, helper: 'Display basic information in front windshield' },
+      { label: 'One-Touch Power Windows', name: COL.powerWindowsOneTouch, helper: 'Single touch to open/close driver windows' },
+      { label: 'Power Windows Remote', name: COL.powerWindowsRemote, helper: 'Open/close windows by key' },
+      { label: 'Rear Sunshade', name: COL.rearSunshade },
+      { label: 'Follow-Me Headlamps', name: COL.followMeHomeLights, helper: 'Headlamps stay on for a few minutes more' },
+      { label: 'Wireless Charging', name: COL.wirelessCharging },
+      { label: 'Cooled Glove Box', name: COL.cooledGloveBox },
+      { label: 'Climate Control', name: COL.climateControl },
+      { label: 'Remote Keyless Entry', name: COL.remoteKeylessEntry },
+      { label: 'Push Start', name: COL.pushStart },
+      { label: 'Cruise Control', name: COL.cruiseControl },
+      { label: 'Ventilated Front Seats', name: COL.ventilatedFrontSeats },
+
+    ],
+  },
+  {
+    label: 'Safety',
+    description: 'Airbags, Sensors...',
+    options: [
+      { label: 'Rear Parking Sensors', name: COL.rearSensors },
+      { label: 'Rear View Camera', name: COL.rearViewCamera },
+      { label: 'Front Parking Sensors', name: COL.frontSensors },
+      { label: 'Side Curtain Airbags', name: COL.sideCurtainAirbags },
+      { label: 'Front Side Airbags', name: COL.frontSideAirbags },
+      { label: 'Dual Horn', name: COL.dualHorn },
+      { label: '360 Camera', name: COL.camera360, helper: 'Shows top view around the car' },
+      { label: 'Lane Camera', name: COL.laneCamera },
+      { label: 'TPMS', name: COL.tpms, helper: 'Type Pressure Monitoring System' },
+      { label: 'ISOFIX compatibility', name: COL.isoFixCompatibility, helper: 'Lock children\'s seats securely into car' },
+    ],
+  },
 
 ];
 
@@ -82,6 +139,7 @@ function FeatureFilter(props) {
                       <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
                       <FormControlLabel value={IGNORE} control={<Radio />} label="Not Concerned" />
                     </RadioGroup>
+                    {option.helper && <FormHelperText>{option.helper}</FormHelperText>}
                   </Grid>
                 ))}
               </Grid>

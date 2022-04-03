@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   Box, TextField, InputAdornment, Checkbox,
   FormLabel, FormGroup, FormControlLabel, Grid,
+  FormHelperText, FormControl, InputLabel, Input,
 } from '../mui';
 import { setSpecFilters } from '../../actions';
 
@@ -71,7 +72,16 @@ function SpecFilter(props) {
               startAdornment: <InputAdornment position="start">&#8377;</InputAdornment>,
             }}
           />
+          <FormHelperText id="price-helper-text">
+            Ex-showroom Delhi price
+          </FormHelperText>
         </Grid>
+        {renderCheckboxes('Body Type', [
+          { name: 'hatch', label: 'Hatch' },
+          { name: 'sedan', label: 'Sedan' },
+          { name: 'suv', label: 'SUV' },
+        ])}
+
         {renderCheckboxes('Fuel', [
           { name: 'petrol', label: 'Petrol' },
           { name: 'diesel', label: 'Diesel' }])}

@@ -1,5 +1,7 @@
 export const TITLE = 'Car Compare';
 
+export const RESULTSIZE = 6;
+
 export const FilterSteps = {
   Specs: 'Specs',
   Features: 'Features',
@@ -13,18 +15,6 @@ export const PREFERRED = 'Prefer';
 export const YES = 'Y';
 export const NO = '-';
 
-export const COL = {
-  points: 'Points',
-  vfm: 'Value for money',
-  make: 'Make',
-  model: 'Model',
-  price: 'Price',
-  fuel: 'Fuel',
-  transmission: 'Transmission',
-  power: 'Power',
-  mileage: 'Mileage',
-  alloy: 'Alloy Wheels',
-  seatAdjust: 'Driver Seat Adjust',
-  androidCar: 'Android CarPlay',
-  powerWindows: 'Power Windows',
-};
+export const HATCH = 'H';
+export const SEDAN = 'S';
+export const SUV = 'SUV';

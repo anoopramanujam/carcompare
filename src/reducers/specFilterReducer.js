@@ -1,7 +1,10 @@
 import { UPDATE_SPECS } from '../globals/ActionTypes';
 
 const InitialState = {
-  price: 15,
+  price: 25,
+  hatch: true,
+  sedan: true,
+  suv: true,
   petrol: true,
   diesel: true,
   manual: true,

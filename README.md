@@ -3,15 +3,23 @@
 ### Introduction
 
 *Car Compare* will help you in your search to find the best cars for you.
+Live at https://carcompare.pages.dev/
 
-### Features
 
-* WILL include over 50 cars available in India
-* WILL Filter by specs and over 30 features
-* Always free, opens-source and ad-free!
+#### Upcoming features for Pre-Release 1
 
-### Coming Soon
+* Deselect all cars in comparison chart
+* Search all cars
+* Add image of each car
+* Show wizard at the beginning
 
-* Wizard selection on first load, to preselect filters
-* Electric vehicles
+#### Following cars to be included soon:
+
+* Maruti S-Presso
+* Kia Seltos
+* Kia Sonet
+* Hyundai i20
+* Kia Carens
+
+
 

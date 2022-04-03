@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup, Checkbox,
 } from '../mui';
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 import { setPrefFilters } from '../../actions/index';
 
 function PrefFilter(props) {

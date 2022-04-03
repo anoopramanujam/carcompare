@@ -99,6 +99,7 @@ function Filters() {
       <div>
         {renderFilter()}
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          {activeStep !== 0 && (
           <Button
             // color="inherit"
             onClick={handleBack}
@@ -106,10 +107,14 @@ function Filters() {
           >
             Back
           </Button>
+          )}
           <Box sx={{ flex: '1 1 auto' }} />
+          {activeStep !== 2
+          && (
           <Button onClick={handleNext} sx={{ mr: 1 }}>
             Next
           </Button>
+          )}
         </Box>
       </div>
     </Box>

@@ -1,4 +1,4 @@
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
 
 const filterPrefs = (data, prefFilters) => {
   const {

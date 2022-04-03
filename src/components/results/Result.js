@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
   Grid, Box, Typography, Button, Stack, Modal,
 } from '../mui';
-import { COL } from '../../globals/Constants';
+import * as COL from '../../globals/ColConstants';
+import { RESULTSIZE } from '../../globals/Constants';
 
 import CarCard from './CarCard';
 import findCars from './FilterLogic';
@@ -12,7 +13,7 @@ import ComparisonGrid from './ComparisonGrid';
 function Result(props) {
   console.log('Render', props);
   const { cars } = props.globalData;
-
+  // console.log('Cars', cars);
   // Need this only for ajax car load
   if (!cars) return null;
   if (props.prefFilters.makes === null) return null;
@@ -48,7 +49,7 @@ function Result(props) {
   }
 
   if (!showAll) {
-    resultData = resultData.slice(0, 8);
+    resultData = resultData.slice(0, RESULTSIZE);
   }
   const appendS = (count) => (count !== 1 ? 's' : '');
   const countLabel = `${makeCount} Make${appendS(makeCount)}, 
@@ -81,18 +82,19 @@ function Result(props) {
           border: 1,
         }}
         >
-          <ComparisonGrid cars={selectedCars} />
+          {/* <Button onClick={() => setComparison(false)}>Close</Button> */}
+          <ComparisonGrid cars={selectedCars} onClose={() => setComparison(false)} />
         </Box>
       </Modal>
       <Typography variant="subtitle2">
         {countLabel}
       </Typography>
       <Typography variant="caption" display="inline">
-        Lines represent relative
+        Colored lines represent relative
       </Typography>
-      <Typography variant="caption" display="inline" color="error.main">
+      <Typography variant="caption" display="inline" color="info.main">
         {' '}
-        Power (Red)
+        Features (Blue)
       </Typography>
       <Typography variant="caption" display="inline" color="success.main">
         {' '}
@@ -101,9 +103,9 @@ function Result(props) {
       <Typography variant="caption" display="inline">
         {' and '}
       </Typography>
-      <Typography variant="caption" display="inline" color="info.main">
+      <Typography variant="caption" display="inline" color="error.main">
         {' '}
-        Features (Blue)
+        Power (Red)
       </Typography>
       <Typography variant="caption" display="inline">. Click on items below and</Typography>
       <Button
