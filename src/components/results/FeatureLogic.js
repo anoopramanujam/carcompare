@@ -18,6 +18,10 @@ function checkCar(car, featureFilters) {
     COL.followMeHomeLights, COL.wirelessCharging, COL.cooledGloveBox,
     COL.climateControl, COL.remoteKeylessEntry, COL.pushStart,
     COL.cruiseControl, COL.ventilatedFrontSeats,
+    COL.rearSensors, COL.rearViewCamera, COL.frontSensors,
+    COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
+    COL.camera360, COL.laneCamera, COL.tpms,
+    COL.isoFixCompatibility,
   ];
   const result = { ...car, [COL.points]: 0 };
   // console.log(featureFilters);

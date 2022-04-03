@@ -65,7 +65,22 @@ const filterLabels = [
 
     ],
   },
-  { label: 'Safety', description: 'Airbags, Sensors...', options: [] },
+  {
+    label: 'Safety',
+    description: 'Airbags, Sensors...',
+    options: [
+      { label: 'Rear Parking Sensors', name: COL.rearSensors },
+      { label: 'Rear View Camera', name: COL.rearViewCamera },
+      { label: 'Front Parking Sensors', name: COL.frontSensors },
+      { label: 'Side Curtain Airbags', name: COL.sideCurtainAirbags },
+      { label: 'Front Side Airbags', name: COL.frontSideAirbags },
+      { label: 'Dual Horn', name: COL.dualHorn },
+      { label: '360 Camera', name: COL.camera360, helper: 'Shows top view around the car' },
+      { label: 'Lane Camera', name: COL.laneCamera },
+      { label: 'TPMS', name: COL.tpms, helper: 'Type Pressure Monitoring System' },
+      { label: 'ISOFIX compatibility', name: COL.isoFixCompatibility, helper: 'Lock children\'s seats securely into car' },
+    ],
+  },
 
 ];
 
@@ -80,7 +95,7 @@ function FeatureFilter(props) {
   };
 
   function renderAccordion(parts) {
-    const [expanded, setExpanded] = React.useState('Comfort');
+    const [expanded, setExpanded] = React.useState(false);
 
     const handleAccordionChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);

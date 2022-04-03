@@ -38,6 +38,17 @@ const InitialState = {
   [COL.pushStart]: PREFERRED,
   [COL.cruiseControl]: PREFERRED,
   [COL.ventilatedFrontSeats]: PREFERRED,
+
+  [COL.frontSideAirbags]: PREFERRED,
+  [COL.sideCurtainAirbags]: PREFERRED,
+  [COL.rearSensors]: PREFERRED,
+  [COL.rearViewCamera]: PREFERRED,
+  [COL.frontSensors]: PREFERRED,
+  [COL.dualHorn]: PREFERRED,
+  [COL.camera360]: PREFERRED,
+  [COL.laneCamera]: PREFERRED,
+  [COL.tpms]: PREFERRED,
+  [COL.isoFixCompatibility]: PREFERRED,
 };
 
 export default (state = InitialState, action) => {

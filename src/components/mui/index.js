@@ -36,3 +36,5 @@ export { default as TableRow } from '@mui/material/TableRow';
 export { default as Paper } from '@mui/material/Paper';
 export { default as Input } from '@mui/material/Input';
 export { default as InputLabel } from '@mui/material/InputLabel';
+export { default as Alert } from '@mui/material/Alert';
+export { default as AlertTitle } from '@mui/material/AlertTitle';
