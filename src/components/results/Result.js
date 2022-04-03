@@ -128,7 +128,7 @@ function Result(props) {
           <Button
             onClick={() => setComparison(true)}
             disabled={itemsSelected === 0}
-            variant="contained"
+            variant={itemsSelected === 0 ? 'outlined' : 'contained'}
             size="small"
             sx={{ pb: 1 }}
           >
