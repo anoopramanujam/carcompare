@@ -71,9 +71,6 @@ function Result(props) {
   function renderResultLegend() {
     return (
       <>
-        <Typography variant="subtitle2">
-          {countLabel}
-        </Typography>
         <Typography variant="caption" display="inline">
           Colored lines represent relative
         </Typography>
@@ -116,16 +113,29 @@ function Result(props) {
           <ComparisonGrid cars={selectedCars} onClose={() => setComparison(false)} />
         </Box>
       </Modal>
-      {renderResultLegend()}
-      <Typography variant="caption" display="inline">. Click on items below and</Typography>
-      <Button
-        onClick={() => setComparison(true)}
-        disabled={itemsSelected === 0}
-        display="inline"
+      <Box
+        display="flex"
+        flexDirection="row"
+        alignItems="flex-end"
+        justifyContent="space-between"
       >
-        Compare
-      </Button>
-      {
+        <Box sx={{ mb: 1 }}>
+          <Typography variant="subtitle2">
+            {countLabel}
+          </Typography>
+
+          <Typography variant="caption" display="inline" sx={{ }}>Click on items below and </Typography>
+          <Button
+            onClick={() => setComparison(true)}
+            disabled={itemsSelected === 0}
+            variant="contained"
+            size="small"
+            sx={{ pb: 1 }}
+          >
+            Compare
+          </Button>
+
+          {
         itemsSelected > 0
         && (
           <>
@@ -148,6 +158,12 @@ function Result(props) {
           </>
         )
       }
+        </Box>
+        <Box sx={{ mb: 0 }}>
+          {renderResultLegend()}
+
+        </Box>
+      </Box>
       <Grid container spacing={2}>
         { resultData.map((car) => (
           <React.Fragment key={`${car.Id}`}>
