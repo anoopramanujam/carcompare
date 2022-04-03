@@ -6,7 +6,7 @@
 Live at https://carcompare.pages.dev/
 
 
-#### Upcoming features for Pre-Release 1
+#### Upcoming features
 
 * Search all cars
 * Add image of each car
