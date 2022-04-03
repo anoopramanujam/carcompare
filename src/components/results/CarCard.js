@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Grid, Box, Typography, LinearProgress,
 } from '../mui';
@@ -6,11 +6,16 @@ import * as COL from '../../globals/ColConstants';
 import '../../globals/styles.css';
 import './CarCard.css';
 
-function CarCard({ car, maxValues, onSelect }) {
-  const [selected, setSelected] = useState(false);
+function CarCard({
+  car, maxValues, onSelect, isSelected,
+}) {
+  const [selected, setSelected] = useState(isSelected);
   const mileagePct = Math.floor((car.Mileage * 100) / maxValues[COL.mileage]);
   const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
   const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
+
+  // Used to deselect when user chooses "Deselect All" in parent
+  useEffect(() => { setSelected(isSelected); }, [isSelected]);
 
   // select/unselect a card
   const select = () => {
@@ -32,6 +37,7 @@ function CarCard({ car, maxValues, onSelect }) {
         borderColor: selected ? 'primary.light' : 'grey.400',
         backgroundColor: selected ? 'grey.200' : 'common.white',
         borderRadius: 1,
+        cursor: 'default',
       }}
       >
         <Typography variant="caption">{car.Make}</Typography>
