@@ -38,3 +38,4 @@ export { default as Input } from '@mui/material/Input';
 export { default as InputLabel } from '@mui/material/InputLabel';
 export { default as Alert } from '@mui/material/Alert';
 export { default as AlertTitle } from '@mui/material/AlertTitle';
+export { default as InputBase } from '@mui/material/InputBase';

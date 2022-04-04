@@ -1,5 +1,6 @@
 import {
-  UPDATE_SPECS, UPDATE_FEATURES, UPDATE_PREFS, LOAD_CARS,
+  UPDATE_SPECS, UPDATE_FEATURES, UPDATE_PREFS,
+  LOAD_CARS, SEARCH_CAR,
 } from '../globals/ActionTypes';
 
 export const setSpecFilters = (specFilters) => ({
@@ -16,6 +17,12 @@ export const setPrefFilters = (prefFilters) => ({
   type: UPDATE_PREFS,
   payload: prefFilters,
 });
+
+export const setSearchTerm = (searchTerm) => (
+  {
+    type: SEARCH_CAR,
+    payload: searchTerm,
+  });
 
 // Not used now!
 export const loadCars = (carsData) => ({
