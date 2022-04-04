@@ -5,6 +5,7 @@ import {
 import Home from './Home';
 import Faq from './Faq';
 import About from './About';
+import CarSearch from './CarSearch';
 
 function Main() {
   const HOME = 'Home';
@@ -26,15 +27,17 @@ function Main() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="transparent">
           <Toolbar>
-            <Stack
+            {/* <Stack
               direction="row"
               divider={<Divider orientation="vertical" flexItem />}
               spacing={2}
-            >
-              <Button onClick={() => setSelected(HOME)}> Home </Button>
-              <Button onClick={() => setSelected(FAQ)}> FAQ </Button>
-              <Button onClick={() => setSelected(ABOUT)}> About </Button>
-            </Stack>
+            > */}
+            <Button onClick={() => setSelected(HOME)}> Home </Button>
+            <Button onClick={() => setSelected(FAQ)}> FAQ </Button>
+            <Button onClick={() => setSelected(ABOUT)}> About </Button>
+            {/* </Stack> */}
+            <Box sx={{ flexGrow: 1 }} />
+            <CarSearch />
           </Toolbar>
         </AppBar>
       </Box>

@@ -7,12 +7,12 @@ import * as COL from '../../globals/ColConstants';
 import { RESULTSIZE } from '../../globals/Constants';
 
 import CarCard from './CarCard';
-import findCars from './FilterLogic';
+import { findCars, searchCars } from './FilterLogic';
 import ComparisonGrid from './ComparisonGrid';
 
 function Result(props) {
   console.log('Render', props);
-  const { cars } = props.globalData;
+  const { cars, searchTerm } = props.globalData;
   // console.log('Cars', cars);
   // Need this only for ajax car load
   if (!cars) return null;
@@ -22,40 +22,9 @@ function Result(props) {
   const [showComparison, setComparison] = useState(false);
   const [selectedCars, setSelectedCars] = useState([]);
   const itemsSelected = selectedCars.length;
-  let resultData = findCars(cars, {
-    specFilters: props.specFilters,
-    featureFilters: props.featureFilters,
-    prefFilters: props.prefFilters,
-  });
-  const totalCount = resultData.length;
-  if (totalCount === 0) {
-    return (
-      <Typography variant="h6" sx={{ m: 2 }}>
-        No cars found
-      </Typography>
-    );
-  }
-  const makeCount = [...new Set(resultData.map((item) => item.Make))].length;
-  const modelCount = [...new Set(resultData.map((item) => item.Model))].length;
+  const searchMode = !!(searchTerm && searchTerm.length > 0);
 
-  // get max values to calculate the color lines renders
-  const max = {};
-  for (let j = 0; j < resultData.length; j += 1) {
-    const cols = [COL.mileage, COL.points, COL.power];
-    const car = resultData[j];
-    for (let k = 0; k < cols.length; k += 1) {
-      const col = cols[k];
-      max[col] = Math.max(max[col] || 0, car[col]);
-    }
-  }
-
-  if (!showAll) {
-    resultData = resultData.slice(0, RESULTSIZE);
-  }
-  const appendS = (count) => (count !== 1 ? 's' : '');
-  const countLabel = `${makeCount} Make${appendS(makeCount)}, 
-                        ${modelCount} Model${appendS(modelCount)}, 
-                        ${totalCount} Variant${appendS(totalCount)}`;
+  let resultData;
 
   function selectCar({ selectedCar, selected }) {
     let sel;
@@ -68,6 +37,18 @@ function Result(props) {
     setSelectedCars(sel);
   }
 
+  function renderSearchLegend() {
+    return (
+      <>
+        <Typography variant="caption" sx={{ }}>
+          Searching for
+          {' '}
+          <strong>{searchTerm}</strong>
+        </Typography>
+        <br />
+      </>
+    );
+  }
   function renderResultLegend() {
     return (
       <>
@@ -94,6 +75,53 @@ function Result(props) {
     );
   }
 
+  if (searchMode) {
+    resultData = searchCars(cars, searchTerm);
+    resultData = findCars([...resultData], {
+      specFilters: props.specFilters,
+      featureFilters: props.featureFilters,
+      prefFilters: props.prefFilters,
+    });
+  } else {
+    resultData = findCars(cars, {
+      specFilters: props.specFilters,
+      featureFilters: props.featureFilters,
+      prefFilters: props.prefFilters,
+    });
+  }
+  const totalCount = resultData.length;
+  if (totalCount === 0) {
+    return (
+      <>
+        {searchMode && renderSearchLegend()}
+        <Typography variant="h6" sx={{ m: 2 }}>
+          No cars found
+        </Typography>
+      </>
+    );
+  }
+  const makeCount = [...new Set(resultData.map((item) => item.Make))].length;
+  const modelCount = [...new Set(resultData.map((item) => item.Model))].length;
+
+  // get max values to calculate the color lines renders
+  const max = {};
+  for (let j = 0; j < resultData.length; j += 1) {
+    const cols = [COL.mileage, COL.points, COL.power];
+    const car = resultData[j];
+    for (let k = 0; k < cols.length; k += 1) {
+      const col = cols[k];
+      max[col] = Math.max(max[col] || 0, car[col]);
+    }
+  }
+
+  if (!showAll) {
+    resultData = resultData.slice(0, RESULTSIZE);
+  }
+  const appendS = (count) => (count !== 1 ? 's' : '');
+  const countLabel = `${makeCount} Make${appendS(makeCount)}, 
+                        ${modelCount} Model${appendS(modelCount)}, 
+                        ${totalCount} Variant${appendS(totalCount)}`;
+
   return (
     <Box sx={{ p: 1, mt: 1, boxShadow: 1 }}>
       <Modal open={showComparison} onClose={() => setComparison(false)}>
@@ -115,12 +143,13 @@ function Result(props) {
       </Modal>
       <Box
         display="flex"
-        flexDirection="row"
-        alignItems="flex-end"
-        justifyContent="space-between"
+        flexDirection="column"
+        // alignItems="flex-end"
+        // justifyContent="space-between"
       >
         <Box sx={{ mb: 1 }}>
           <Typography variant="subtitle2">
+            {searchMode && renderSearchLegend()}
             {countLabel}
           </Typography>
 
