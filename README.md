@@ -15,7 +15,6 @@ Live at https://carcompare.pages.dev/
 
 #### Following cars to be included soon:
 
-* Kia Sonet
 * Hyundai i20
 * Kia Carens
 * Tata Altroz

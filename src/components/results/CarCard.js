@@ -32,7 +32,7 @@ function CarCard({
       onClick={() => { select(); }}
     >
       <Box sx={{
-        p: 1,
+        p: 0,
         border: selected ? 2 : 1,
         borderColor: selected ? 'primary.light' : 'grey.400',
         backgroundColor: selected ? 'grey.200' : 'common.white',
@@ -40,27 +40,37 @@ function CarCard({
         cursor: 'default',
       }}
       >
-        <Typography variant="caption">{car.Make}</Typography>
-        <Typography variant="subtitle2">
-          {car.Model}
-          {' '}
-          {car.Variant}
-        </Typography>
-        <Typography variant="caption">
-          {' '}
-          {car.Fuel === 'P' ? 'Petrol' : 'Diesel'}
-          {' '}
-          {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
-        </Typography>
-        <Typography variant="body2">
-          {' '}
-          {car.Price}
-          {' '}
-          Lakhs
-        </Typography>
-        <LinearProgress color="info" variant="determinate" value={featurePct} sx={{ mb: 1 }} />
-        <LinearProgress color="success" variant="determinate" value={mileagePct} sx={{ mb: 1 }} />
-        <LinearProgress color="error" variant="determinate" value={powerPct} sx={{ }} />
+        <Box style={{ overflow: 'hidden', borderRadius: 1 }}>
+          <img
+            src={`${process.env.PUBLIC_URL}/img/${car.Make} ${car.Model}.jpg`}
+            alt={`${car.Make} ${car.Model}`}
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </Box>
+        <Box sx={{ p: 1 }}>
+          <Typography variant="caption">{car.Make}</Typography>
+          <Typography variant="subtitle2">
+            {car.Model}
+            {' '}
+            {car.Variant}
+          </Typography>
+          <Typography variant="caption">
+            {' '}
+            {car.Fuel === 'P' ? 'Petrol' : 'Diesel'}
+            {' '}
+            {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
+          </Typography>
+          <Typography variant="body2">
+            {' '}
+            {car.Price}
+            {' '}
+            Lakhs
+          </Typography>
+          <LinearProgress color="info" variant="determinate" value={featurePct} sx={{ mb: 1 }} />
+          <LinearProgress color="success" variant="determinate" value={mileagePct} sx={{ mb: 1 }} />
+          <LinearProgress color="error" variant="determinate" value={powerPct} sx={{ }} />
+        </Box>
+
       </Box>
     </Grid>
   );
