@@ -1,6 +1,6 @@
 import {
   UPDATE_SPECS, UPDATE_FEATURES, UPDATE_PREFS,
-  LOAD_CARS, SEARCH_CAR,
+  LOAD_CARS, SEARCH_CAR, TOGGLE_WIZARD_MODE,
 } from '../globals/ActionTypes';
 
 export const setSpecFilters = (specFilters) => ({
@@ -23,6 +23,10 @@ export const setSearchTerm = (searchTerm) => (
     type: SEARCH_CAR,
     payload: searchTerm,
   });
+
+export const setWizardMode = (wizardMode) => (
+  { type: TOGGLE_WIZARD_MODE, payload: wizardMode }
+);
 
 // Not used now!
 export const loadCars = (carsData) => ({

@@ -6,13 +6,6 @@
 Live at https://carcompare.pages.dev/
 
 
-#### Upcoming features
-
-* Search all cars
-* Add image of each car
-* Show wizard at the beginning
-* More...
-
 #### Following cars to be included soon:
 
 * Hyundai i20
