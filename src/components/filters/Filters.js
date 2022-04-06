@@ -4,7 +4,7 @@ import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 import {
-  Box, Stepper, Step, StepLabel, Button, StepButton,
+  Box, Stepper, Step, StepLabel, Button, StepButton, Typography,
 } from '../mui';
 import FeatureFilter from './FeatureFilter';
 import SpecFilter from './SpecFilter';
@@ -86,6 +86,10 @@ function Filters() {
       boxShadow: 1,
     }}
     >
+      <Typography variant="body1">
+        Select your options below:
+      </Typography>
+      <br />
       <Stepper nonLinear activeStep={activeStep}>
         {steps.map((label, index) => (
           <Step key={label}>

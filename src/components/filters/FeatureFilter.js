@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
@@ -9,7 +9,7 @@ import {
   REQUIRED, IGNORE, PREFERRED,
 } from '../../globals/Constants';
 import * as COL from '../../globals/ColConstants';
-import { setFeatureFilters } from '../../actions';
+import { setFeatureFilters, setWizardMode } from '../../actions';
 
 // All the features to be shwon
 const filterLabels = [
@@ -86,6 +86,11 @@ const filterLabels = [
 
 function FeatureFilter(props) {
   const filters = props.featureFilters;
+  const globals = props.globalData;
+
+  useEffect(() => {
+    if (globals.wizardMode) { props.setWizardMode(false); }
+  }, []);
 
   const handleChange = (event) => {
     const { target } = event;
@@ -162,6 +167,9 @@ function FeatureFilter(props) {
   );
 }
 
-const mapStateToProps = (state) => ({ featureFilters: state.featureFilters });
+const mapStateToProps = (state) => ({
+  featureFilters: state.featureFilters,
+  globalData: state.globalData,
+});
 
-export default connect(mapStateToProps, { setFeatureFilters })(FeatureFilter);
+export default connect(mapStateToProps, { setFeatureFilters, setWizardMode })(FeatureFilter);

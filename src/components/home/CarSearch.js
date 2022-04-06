@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { connect } from 'react-redux';
 import { InputBase } from '../mui';
-import { setSearchTerm } from '../../actions';
+import { setSearchTerm, setWizardMode } from '../../actions';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,6 +56,7 @@ function CarSearch(props) {
   const handleChange = (event) => {
     const str = event.target.value;
     setTerm(str);
+    props.setWizardMode(false);
     props.setSearchTerm(str);
   };
 
@@ -74,4 +75,4 @@ function CarSearch(props) {
   );
 }
 
-export default connect(null, { setSearchTerm })(CarSearch);
+export default connect(null, { setSearchTerm, setWizardMode })(CarSearch);

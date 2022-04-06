@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import {
   Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup, Checkbox,
 } from '../mui';
 import * as COL from '../../globals/ColConstants';
-import { setPrefFilters } from '../../actions/index';
+import { setPrefFilters, setWizardMode } from '../../actions/index';
 
 function PrefFilter(props) {
   const options = [COL.price, COL.power, COL.mileage, COL.vfm];
   const filters = props.prefFilters;
+  const globals = props.globalData;
+
+  useEffect(() => {
+    if (globals.wizardMode) { props.setWizardMode(false); }
+  }, []);
 
   // to be used when ajax is implemented and prefFilter makes are initialized to null
   if (filters.makes === null) {
@@ -94,4 +99,4 @@ const mapStateToProps = (state) => ({
   globalData: state.globalData,
 });
 
-export default connect(mapStateToProps, { setPrefFilters })(PrefFilter);
+export default connect(mapStateToProps, { setPrefFilters, setWizardMode })(PrefFilter);
