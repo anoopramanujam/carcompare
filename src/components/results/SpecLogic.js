@@ -16,8 +16,8 @@ const filterSpecs = (data, specFilters) => {
     )
     && (
       (x[COL.transmission][0] === 'M' && manual)
-      // Account for AMT, CVT, DCT
-      || ((['A', 'C', 'D'].includes(x[COL.transmission][0])) && auto)
+      // Account for AMT, CVT, DCT, IVT
+      || ((['A', 'C', 'D', 'I'].includes(x[COL.transmission][0])) && auto)
     ));
   return results;
 };
