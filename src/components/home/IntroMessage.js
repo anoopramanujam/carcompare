@@ -11,7 +11,7 @@ function IntroMessage() {
         <li>(IN PROGRESS) Includes all cars in India which sells more than 1000 units a month</li>
         <li>Free and open-source</li>
         <li>
-          TO BE INCLUDED SOON: Volkswagen Virtus, Kia Carens, Tata Altroz,
+          TO BE INCLUDED SOON: Volkswagen Virtus, Tata Altroz,
           Tata Tiago, Mahindra XUV 700, Nissan Magnite,  Hyundai Aura, Honda Amaze,
           Mahindra Scorpio, Hyundai Alcazar,  MG Hector, MG Astor, Volkswagen Taigun,
           Renault Kiger, Skoda Kushaq, Tata Harrier, Tata Safari, Mahindra XUV 300,
