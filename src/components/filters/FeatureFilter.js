@@ -142,7 +142,6 @@ function FeatureFilter(props) {
                     >
                       <FormControlLabel value={REQUIRED} control={<Radio />} label="Required" />
                       <FormControlLabel value={PREFERRED} control={<Radio />} label="Nice to Have" />
-                      <FormControlLabel value={IGNORE} control={<Radio />} label="Not Concerned" />
                     </RadioGroup>
                     {option.helper && <FormHelperText>{option.helper}</FormHelperText>}
                   </Grid>
