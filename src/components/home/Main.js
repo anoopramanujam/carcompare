@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import {
   AppBar, Box, Toolbar, Stack, Divider, Link, Button,
 } from '../mui';
@@ -6,12 +7,17 @@ import Home from './Home';
 import Faq from './Faq';
 import About from './About';
 import CarSearch from './CarSearch';
+import { loadCars } from '../../actions';
 
-function Main() {
+function Main(props) {
   const HOME = 'Home';
   const ABOUT = 'About';
   const FAQ = 'FAQ';
   const [selected, setSelected] = useState(HOME);
+
+  useEffect(() => {
+    props.loadCars();
+  }, []);
 
   function renderPage() {
     switch (selected) {
@@ -48,4 +54,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default connect(null, { loadCars })(Main);

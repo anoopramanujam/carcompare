@@ -3,6 +3,8 @@ import {
   LOAD_CARS, SEARCH_CAR, TOGGLE_WIZARD_MODE,
 } from '../globals/ActionTypes';
 
+import cars from '../api/cars';
+
 export const setSpecFilters = (specFilters) => ({
   type: UPDATE_SPECS,
   payload: specFilters,
@@ -28,8 +30,8 @@ export const setWizardMode = (wizardMode) => (
   { type: TOGGLE_WIZARD_MODE, payload: wizardMode }
 );
 
-// Not used now!
-export const loadCars = (carsData) => ({
-  type: LOAD_CARS,
-  payload: carsData,
-});
+export const loadCars = () => async (dispatch) => {
+  console.log('Waiting for response');
+  const response = await cars.get('/carData.json');
+  dispatch({ type: LOAD_CARS, payload: response.data });
+};

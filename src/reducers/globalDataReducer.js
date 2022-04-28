@@ -1,8 +1,8 @@
 import { SEARCH_CAR, LOAD_CARS, TOGGLE_WIZARD_MODE } from '../globals/ActionTypes';
-import carData from '../data/carData';
+// import carData from '../data/carData';
 
 const InitialState = {
-  cars: carData,
+  cars: [],
   searchTerm: '',
   wizardMode: true,
 };
@@ -15,7 +15,7 @@ export default (state = InitialState, action) => {
       return { ...state, searchTerm: action.payload };
     case TOGGLE_WIZARD_MODE:
       return { ...state, wizardMode: action.payload };
-    case LOAD_CARS: // Not used now
+    case LOAD_CARS:
       return { ...state, cars: action.payload };
     default:
       return state;

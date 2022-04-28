@@ -1,10 +1,10 @@
 import { UPDATE_PREFS } from '../globals/ActionTypes';
 import * as COL from '../globals/ColConstants';
-import carData from '../data/carData';
+// import carData from '../data/carData';
 
 const InitialState = {
   sortBy: COL.vfm,
-  makes: [...new Set(carData.map((item) => item.Make))],
+  makes: [],
 };
 
 export default (state = InitialState, action) => {
