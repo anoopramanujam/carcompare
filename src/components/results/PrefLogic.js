@@ -6,7 +6,10 @@ const filterPrefs = (data, prefFilters) => {
   } = prefFilters;
   let results = [...data];
 
-  results = data.filter((car) => makes.includes(car[COL.make]));
+  // Show all makes if none is selected
+  if (makes.length !== 0) {
+    results = data.filter((car) => makes.includes(car[COL.make]));
+  }
   function sortCar(arr, key) {
     return key === COL.price
       ? arr.sort((a, b) => a[key] - b[key])

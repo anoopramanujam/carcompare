@@ -15,15 +15,6 @@ function PrefFilter(props) {
     if (globals.wizardMode) { props.setWizardMode(false); }
   }, []);
 
-  // to be used when ajax is implemented and prefFilter makes are initialized to null
-  if (filters.makes === null) {
-    props.setPrefFilters({
-      ...props.prefFilters,
-      makes: [...new Set(props.globalData.cars.map((item) => item.Make))],
-    });
-    return null;
-  }
-
   const handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -43,8 +34,11 @@ function PrefFilter(props) {
     props.setPrefFilters({ ...props.prefFilters, makes: makeFilters });
   };
 
+  // just in case someone whiz past the wizard, wait till ajax load
+  if (globals.cars === null || globals.cars.length === 0) return null;
+
   // select distinct makes
-  const availableMakes = [...new Set(props.globalData.cars.map((item) => item.Make))];
+  const availableMakes = [...new Set(globals.cars.map((item) => item.Make))].sort();
 
   return (
     <Box sx={{
