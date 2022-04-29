@@ -12,7 +12,7 @@ function IntroMessage() {
         <li>Free and open-source</li>
         <li>
           TO BE INCLUDED SOON: Tata Altroz,
-          Tata Tiago, Mahindra XUV 700, Nissan Magnite,  Hyundai Aura, Honda Amaze,
+          Mahindra XUV 700, Nissan Magnite,  Hyundai Aura, Honda Amaze,
           Mahindra Scorpio, Hyundai Alcazar,
           Renault Kiger, Tata Safari, Mahindra XUV 300,
           Toyota Urban Cruiser,  Tata Tigor, Maruti Ignis, Toyota Glanza
