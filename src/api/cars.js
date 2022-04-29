@@ -1,5 +1,6 @@
 import axios from 'axios';
+import { API_BASE } from '../globals/Constants';
 
 export default axios.create({
-  baseURL: 'https://raw.githubusercontent.com/anoopramanujam/anoopramanujam.github.io/main/carcompare',
+  baseURL: API_BASE,
 });

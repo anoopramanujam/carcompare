@@ -3,6 +3,7 @@ import {
   Grid, Box, Typography, LinearProgress,
 } from '../mui';
 import * as COL from '../../globals/ColConstants';
+import { IMAGE_DIR } from '../../globals/Constants';
 import '../../globals/styles.css';
 import './CarCard.css';
 
@@ -42,7 +43,7 @@ function CarCard({
       >
         <Box style={{ overflow: 'hidden', borderRadius: 1 }}>
           <img
-            src={`${process.env.PUBLIC_URL}/img/${car.Make} ${car.Model}.jpg`}
+            src={`${IMAGE_DIR}/${car.Make} ${car.Model}.jpg`}
             alt={`${car.Make} ${car.Model}`}
             style={{ maxWidth: '100%', height: 'auto' }}
           />
