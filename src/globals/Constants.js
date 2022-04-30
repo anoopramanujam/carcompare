@@ -1,6 +1,6 @@
 export const TITLE = 'Car Compare';
 
-export const IMAGE_DIR = 'https://raw.githubusercontent.com/anoopramanujam/anoopramanujam.github.io/af65b0c4346e7091702ac07083cf22e40d3625ac/carcompare/images';
+export const IMAGE_DIR = 'https://raw.githubusercontent.com/anoopramanujam/anoopramanujam.github.io/main/carcompare/images';
 export const API_BASE = 'https://raw.githubusercontent.com/anoopramanujam/anoopramanujam.github.io/main/carcompare';
 
 export const RESULTSIZE = 6;
