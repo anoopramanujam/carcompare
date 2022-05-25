@@ -4,6 +4,7 @@ import React from 'react';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
+import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
 import App from './App';
@@ -23,7 +24,7 @@ const store = createStore(
 describe('basics', () => {
   it('basic render', () => {
     render(<Provider store={store}><App /></Provider>);
-    const linkElement = screen.getByText(/Ignis/i);
+    const linkElement = screen.getByText(/Set your specs/i);
     expect(linkElement).toBeInTheDocument();
   });
 });
