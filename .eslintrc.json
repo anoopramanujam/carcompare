@@ -1,11 +1,14 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb"
+    "airbnb",
+    "plugin:testing-library/react",
+    "plugin:jest/all"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -15,7 +18,9 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "testing-library",
+    "jest"
   ],
   "rules": {
     "linebreak-style": 0,
