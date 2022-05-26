@@ -32,18 +32,19 @@ describe('app', () => {
     expect(introText).toBeInTheDocument();
   });
 
-  it('filters', () => {
+  it('filters', async () => {
     render(reduxWrapper(<App />));
     const specText = screen.getByText(/Maximum price/i);
     expect(specText).toBeInTheDocument();
 
-    const nextLink = screen.getByRole('button', { name: 'next' });
+    // Test the filters come up for each Next button click
+    const nextLink = screen.queryByRole('button', { name: 'next' });
     fireEvent.click(nextLink);
     const featureText = screen.getByText(/Feature Filter/);
     expect(featureText).toBeInTheDocument();
-    const nextLink2 = screen.getByRole('button', { name: 'next' });
-    fireEvent.click(nextLink2);
-    const nextLink3 = screen.queryByRole('button', { name: 'next' });
-    expect(nextLink3).toBeNull();
+    fireEvent.click(nextLink);
+    const prefText = await screen.findByText(/Sort By/);
+    expect(prefText).toBeInTheDocument();
+    expect(nextLink).not.toBeInTheDocument();
   });
 });
