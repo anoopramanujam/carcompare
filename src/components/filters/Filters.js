@@ -115,7 +115,7 @@ function Filters() {
           <Box sx={{ flex: '1 1 auto' }} />
           {activeStep !== 2
           && (
-          <Button onClick={handleNext} sx={{ mr: 1 }}>
+          <Button aria-label="next" onClick={handleNext} sx={{ mr: 1 }}>
             Next
           </Button>
           )}
