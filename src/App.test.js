@@ -23,8 +23,6 @@ function reduxWrapper(children) {
   return <Provider store={store}>{children}</Provider>;
 }
 
-// const renderRedux =
-
 describe('app', () => {
   it('basic render', () => {
     render(reduxWrapper(<App />));
