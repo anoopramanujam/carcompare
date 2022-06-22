@@ -1,25 +1,26 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup, Checkbox,
 } from '../mui';
 import * as COL from '../../globals/ColConstants';
 import { setPrefFilters, setWizardMode } from '../../actions/index';
 
-function PrefFilter(props) {
+function PrefFilter() {
   const options = [COL.price, COL.power, COL.mileage, COL.vfm];
-  const filters = props.prefFilters;
-  const globals = props.globalData;
+  const filters = useSelector((state) => state.prefFilters);
+  const globals = useSelector((state) => state.globalData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (globals.wizardMode) { props.setWizardMode(false); }
+    if (globals.wizardMode) { dispatch(setWizardMode(false)); }
   }, []);
 
   const handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
-    props.setPrefFilters({ ...props.prefFilters, [name]: value });
+    dispatch(setPrefFilters({ ...filters, [name]: value }));
   };
 
   const handleMakes = (event) => {
@@ -31,7 +32,7 @@ function PrefFilter(props) {
     } else if (!target.checked && makeFilters.includes(name)) {
       makeFilters = makeFilters.filter((make) => make !== name);
     }
-    props.setPrefFilters({ ...props.prefFilters, makes: makeFilters });
+    dispatch(setPrefFilters({ ...filters, makes: makeFilters }));
   };
 
   // just in case someone whiz past the wizard, wait till ajax load
@@ -88,9 +89,4 @@ function PrefFilter(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  prefFilters: state.prefFilters,
-  globalData: state.globalData,
-});
-
-export default connect(mapStateToProps, { setPrefFilters, setWizardMode })(PrefFilter);
+export default PrefFilter;

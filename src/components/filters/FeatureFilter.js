@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box, Typography, Accordion, AccordionDetails, AccordionSummary,
@@ -84,19 +84,20 @@ const filterLabels = [
 
 ];
 
-function FeatureFilter(props) {
-  const filters = props.featureFilters;
-  const globals = props.globalData;
+function FeatureFilter() {
+  const filters = useSelector((state) => state.featureFilters);
+  const globals = useSelector((state) => state.globalData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (globals.wizardMode) { props.setWizardMode(false); }
+    if (globals.wizardMode) { dispatch(setWizardMode(false)); }
   }, []);
 
   const handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
-    props.setFeatureFilters({ ...props.featureFilters, [name]: value });
+    dispatch(setFeatureFilters({ ...filters, [name]: value }));
   };
 
   function renderAccordion(parts) {
@@ -166,9 +167,4 @@ function FeatureFilter(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  featureFilters: state.featureFilters,
-  globalData: state.globalData,
-});
-
-export default connect(mapStateToProps, { setFeatureFilters, setWizardMode })(FeatureFilter);
+export default FeatureFilter;

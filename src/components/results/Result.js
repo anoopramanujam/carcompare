@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   Grid, Box, Typography, Button, Stack, Modal,
 } from '../mui';
@@ -10,13 +10,14 @@ import CarCard from './CarCard';
 import { findCars, searchCars } from './FilterLogic';
 import ComparisonGrid from './ComparisonGrid';
 
-function Result(props) {
-  console.log('Render', props);
-  const { cars, searchTerm } = props.globalData;
-  // console.log('Cars', cars);
-  // Need this only for ajax car load
+function Result() {
+  const specFilters = useSelector((state) => state.specFilters);
+  const featureFilters = useSelector((state) => state.featureFilters);
+  const prefFilters = useSelector((state) => state.prefFilters);
+  const globalData = useSelector((state) => state.globalData);
+  const { cars, searchTerm } = globalData;
   if (!cars) return null;
-  if (props.prefFilters.makes === null) return null;
+  if (prefFilters.makes === null) return null;
 
   const [showAll, setShowAll] = useState(false);
   const [showComparison, setComparison] = useState(false);
@@ -78,15 +79,15 @@ function Result(props) {
   if (searchMode) {
     resultData = searchCars(cars, searchTerm);
     resultData = findCars([...resultData], {
-      specFilters: props.specFilters,
-      featureFilters: props.featureFilters,
-      prefFilters: props.prefFilters,
+      specFilters,
+      featureFilters,
+      prefFilters,
     });
   } else {
     resultData = findCars(cars, {
-      specFilters: props.specFilters,
-      featureFilters: props.featureFilters,
-      prefFilters: props.prefFilters,
+      specFilters,
+      featureFilters,
+      prefFilters,
     });
   }
   const totalCount = resultData.length;
@@ -216,11 +217,4 @@ function Result(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  specFilters: state.specFilters,
-  featureFilters: state.featureFilters,
-  prefFilters: state.prefFilters,
-  globalData: state.globalData,
-});
-
-export default connect(mapStateToProps)(Result);
+export default Result;

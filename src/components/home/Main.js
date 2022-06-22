@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   AppBar, Box, Toolbar, Stack, Divider, Link, Button,
 } from '../mui';
@@ -14,9 +14,10 @@ function Main(props) {
   const ABOUT = 'About';
   const FAQ = 'FAQ';
   const [selected, setSelected] = useState(HOME);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    props.loadCars();
+    dispatch(loadCars());
   }, []);
 
   function renderPage() {
@@ -54,4 +55,4 @@ function Main(props) {
   );
 }
 
-export default connect(null, { loadCars })(Main);
+export default Main;
