@@ -1,20 +1,22 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Box, TextField, InputAdornment, Checkbox,
   FormLabel, FormGroup, FormControlLabel, Grid,
   FormHelperText, FormControl, InputLabel, Input,
 } from '../mui';
-import { setSpecFilters } from '../../actions';
+// import { setSpecFilters } from '../../actions';
+import { setSpecFilters } from '../../reducers/specSlice';
 
-function SpecFilter(props) {
-  const filters = props.specFilters;
+function SpecFilter() {
+  const filters = useSelector((state) => state.specFilters);
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
-    props.setSpecFilters({ ...props.specFilters, [name]: value });
+    dispatch(setSpecFilters({ ...filters, [name]: value }));
   };
 
   function renderCheckboxes(title, options) {
@@ -95,6 +97,4 @@ function SpecFilter(props) {
   );
 }
 
-const mapStateToProps = (state) => ({ specFilters: state.specFilters });
-
-export default connect(mapStateToProps, { setSpecFilters })(SpecFilter);
+export default SpecFilter;

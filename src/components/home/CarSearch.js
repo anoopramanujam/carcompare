@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { InputBase } from '../mui';
-import { setSearchTerm, setWizardMode } from '../../actions';
+import { setSearchTerm, setWizardMode } from '../../reducers/globalSlice';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,14 +50,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function CarSearch(props) {
+function CarSearch() {
   const [term, setTerm] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     const str = event.target.value;
     setTerm(str);
-    props.setWizardMode(false);
-    props.setSearchTerm(str);
+    dispatch(setWizardMode(false));
+    dispatch(setSearchTerm(str));
   };
 
   return (
@@ -75,4 +76,4 @@ function CarSearch(props) {
   );
 }
 
-export default connect(null, { setSearchTerm, setWizardMode })(CarSearch);
+export default CarSearch;

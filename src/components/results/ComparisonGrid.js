@@ -10,7 +10,6 @@ import './Grid.css';
 import { HATCH, SEDAN } from '../../globals/Constants';
 
 function ComparisonGrid({ cars, onClose }) {
-  console.log('Cars', cars);
   if (!cars) {
     return null;
   }

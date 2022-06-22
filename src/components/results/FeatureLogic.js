@@ -24,7 +24,6 @@ function checkCar(car, featureFilters) {
     COL.isoFixCompatibility,
   ];
   const result = { ...car, [COL.points]: 0 };
-  // console.log(featureFilters);
   for (let i = 0; i < features.length; i += 1) {
     const feature = features[i];
 

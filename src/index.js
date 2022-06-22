@@ -1,17 +1,25 @@
 /* eslint-disable jest/require-hook */
+import { configureStore } from '@reduxjs/toolkit';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import reduxThunk from 'redux-thunk';
 import App from './App';
-import reducers from './reducers';
+import specFilterReducer from './reducers/specSlice';
+import featureFilterReducer from './reducers/featureSlice';
+import prefFilterReducer from './reducers/prefSlice';
+import globalDataReducer, { loadCars } from './reducers/globalSlice';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(reduxThunk)),
-);
+const store = configureStore({
+  reducer: {
+    specFilters: specFilterReducer,
+    featureFilters: featureFilterReducer,
+    prefFilters: prefFilterReducer,
+    globalData: globalDataReducer,
+  },
+});
+
+store.dispatch(loadCars());
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

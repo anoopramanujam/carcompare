@@ -1,12 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Filters from '../filters/Filters';
 import Result from '../results/Result';
 import IntroMessage from './IntroMessage';
 
-function Home(props) {
-  // console.log(props);
-  const globals = props.globalData;
+function Home() {
+  const globals = useSelector((state) => state.globalData);
   return (
     <div>
       {globals.wizardMode ? <IntroMessage /> : <Result /> }
@@ -15,8 +14,4 @@ function Home(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  globalData: state.globalData,
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;
