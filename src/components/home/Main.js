@@ -7,18 +7,12 @@ import Home from './Home';
 import Faq from './Faq';
 import About from './About';
 import CarSearch from './CarSearch';
-import { loadCars } from '../../actions';
 
-function Main(props) {
+function Main() {
   const HOME = 'Home';
   const ABOUT = 'About';
   const FAQ = 'FAQ';
   const [selected, setSelected] = useState(HOME);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadCars());
-  }, []);
 
   function renderPage() {
     switch (selected) {

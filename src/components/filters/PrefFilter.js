@@ -4,7 +4,8 @@ import {
   Box, Typography, FormGroup, FormLabel, FormControlLabel, Radio, RadioGroup, Checkbox,
 } from '../mui';
 import * as COL from '../../globals/ColConstants';
-import { setPrefFilters, setWizardMode } from '../../actions/index';
+import { setPrefFilters } from '../../reducers/prefSlice';
+import { setWizardMode } from '../../reducers/globalSlice';
 
 function PrefFilter() {
   const options = [COL.price, COL.power, COL.mileage, COL.vfm];
@@ -26,7 +27,8 @@ function PrefFilter() {
   const handleMakes = (event) => {
     const { target } = event;
     const { name } = target;
-    let makeFilters = filters.makes;
+    let makeFilters = [...filters.makes];
+
     if (target.checked && !makeFilters.includes(name)) {
       makeFilters.push(name);
     } else if (!target.checked && makeFilters.includes(name)) {

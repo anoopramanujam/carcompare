@@ -1,8 +1,8 @@
-import { UPDATE_FEATURES } from '../globals/ActionTypes';
+import { createSlice } from '@reduxjs/toolkit';
 import { PREFERRED } from '../globals/Constants';
 import * as COL from '../globals/ColConstants';
 
-const InitialState = {
+const initialState = {
   [COL.alloyWheels]: PREFERRED,
   [COL.daytimeRunningLamps]: PREFERRED,
   [COL.automaticHeadlightControl]: PREFERRED,
@@ -51,12 +51,15 @@ const InitialState = {
   [COL.isoFixCompatibility]: PREFERRED,
 };
 
-export default (state = InitialState, action) => {
-  // console.log(state);
-  switch (action.type) {
-    case UPDATE_FEATURES:
+const featureSlice = createSlice({
+  name: 'featureFilters',
+  initialState,
+  reducers: {
+    setFeatureFilters(state, action) {
       return action.payload;
-    default:
-      return state;
-  }
-};
+    },
+  },
+});
+
+export const { setFeatureFilters } = featureSlice.actions;
+export default featureSlice.reducer;

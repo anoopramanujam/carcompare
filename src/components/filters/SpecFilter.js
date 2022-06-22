@@ -5,7 +5,8 @@ import {
   FormLabel, FormGroup, FormControlLabel, Grid,
   FormHelperText, FormControl, InputLabel, Input,
 } from '../mui';
-import { setSpecFilters } from '../../actions';
+// import { setSpecFilters } from '../../actions';
+import { setSpecFilters } from '../../reducers/specSlice';
 
 function SpecFilter() {
   const filters = useSelector((state) => state.specFilters);

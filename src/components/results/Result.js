@@ -207,7 +207,7 @@ function Result() {
         ))}
       </Grid>
       <Stack direction="row" justifyContent="end">
-        <Button onClick={() => { console.log(showAll); setShowAll(!showAll); }}>
+        <Button onClick={() => { setShowAll(!showAll); }}>
           Show
           {' '}
           {showAll ? 'Less' : 'All'}

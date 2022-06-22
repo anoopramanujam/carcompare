@@ -9,7 +9,8 @@ import {
   REQUIRED, IGNORE, PREFERRED,
 } from '../../globals/Constants';
 import * as COL from '../../globals/ColConstants';
-import { setFeatureFilters, setWizardMode } from '../../actions';
+import { setFeatureFilters } from '../../reducers/featureSlice';
+import { setWizardMode } from '../../reducers/globalSlice';
 
 // All the features to be shwon
 const filterLabels = [
