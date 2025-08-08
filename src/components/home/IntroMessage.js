@@ -7,14 +7,12 @@ function IntroMessage() {
       <AlertTitle>Set your specs, choose your features and find your car!</AlertTitle>
 
       <ul>
-        <li> 19 models and 202 variants</li>
+        <li> 11 models and 33 variants</li>
         <li>(IN PROGRESS) Includes all cars in India which sells more than 2500 units a month</li>
         <li>Free and open-source</li>
         <li>
-          TO BE INCLUDED SOON: Tata Altroz,
-          aMahindra XUV 700, Nissan Magnite,  Hyundai Aura, Honda Amaze,
-          Mahindra Scorpio, Hyundai Alcazar,
-          Renault Kiger, Tata Safari, Mahindra XUV 300,
+          TO BE INCLUDED SOON: Mahindra XUV 700, Nissan Magnite,
+          Hyundai Aura, Honda Amaze, Renault Kiger, Tata Safari, Mahindra XUV 300,
           Toyota Urban Cruiser,  Tata Tigor, Maruti Ignis, Toyota Glanza
         </li>
       </ul>
