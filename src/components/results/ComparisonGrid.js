@@ -116,7 +116,6 @@ function ComparisonGrid({ cars, onClose }) {
         p: 1,
         position: 'fixed',
         zIndex: 999,
-        background: 'white',
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',
