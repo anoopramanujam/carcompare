@@ -41,7 +41,7 @@ function ComparisonGrid({ cars, onClose }) {
   const rows = [];
 
   const featuresToProcess = [COL.price, COL.bodyType,
-    COL.engineCapacity, COL.fuelTank, COL.power, COL.torque,
+    COL.engineCapacity, COL.mileage, COL.power, COL.torque,
     COL.length, COL.width, COL.height, COL.wheelbase,
     COL.groundClearance, COL.turningRadius, COL.bootSpace,
     COL.tyres,
@@ -76,7 +76,7 @@ function ComparisonGrid({ cars, onClose }) {
         featureLabel = 'Battery Capacity';
         featureUnit = 'kWh';
         break;
-      case COL.fuelTank:
+      case COL.mileage:
         featureLabel = 'Range';
         featureUnit = 'km';
         break;
