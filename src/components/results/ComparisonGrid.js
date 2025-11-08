@@ -117,15 +117,16 @@ function ComparisonGrid({ cars, onClose }) {
         position: 'fixed',
         zIndex: 999,
         background: 'white',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'flex-end',
       }}
       >
         <Button
           variant="contained"
           onClick={() => onClose()}
-          sx={{ }}
         >
-          Close
-
+          X
         </Button>
       </Box>
       <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
