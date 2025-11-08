@@ -9,7 +9,7 @@ import * as COL from '../../globals/ColConstants';
 import './Grid.css';
 import { HATCH, SEDAN } from '../../globals/Constants';
 
-function ComparisonGrid({ cars, onClose }) {
+function ComparisonGrid({ cars, onClose, onRemoveCar }) {
   if (!cars) {
     return null;
   }
@@ -139,7 +139,26 @@ function ComparisonGrid({ cars, onClose }) {
                   style={{ minWidth: column.minWidth }}
                 >
                   <div>
-                    {column.label}
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+                      <Box sx={{ flex: 1 }}>
+                        {column.label}
+                      </Box>
+                      {column.id !== 'id' && onRemoveCar && (
+                        <Button
+                          size="small"
+                          onClick={() => onRemoveCar(column.id)}
+                          sx={{
+                            minWidth: 'auto',
+                            padding: '2px 4px',
+                            color: 'text.secondary',
+                            fontSize: '0.75rem',
+                            ml: 0.5,
+                          }}
+                        >
+                          ×
+                        </Button>
+                      )}
+                    </Box>
                     {column.lastModified && (
                       <Typography variant="caption" display="block" sx={{ color: 'text.secondary', fontSize: '0.7rem', mt: 0.5 }}>
                         Updated on
