@@ -61,7 +61,7 @@ function ComparisonGrid({ cars, onClose }) {
     COL.pushStart, COL.remoteKeylessEntry, COL.cruiseControl,
     COL.ventilatedFrontSeats, COL.steeringMountedControl,
 
-    COL.rearSensors, COL.rearViewCamera, COL.frontSensors,
+    COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
     COL.camera360, COL.laneCamera, COL.tpms,
     COL.isoFixCompatibility,
@@ -101,8 +101,6 @@ function ComparisonGrid({ cars, onClose }) {
         case COL.bodyType: if (displayValue === HATCH) { displayValue = 'Hatch'; } else if (displayValue === SEDAN) { displayValue = 'Sedan'; }
           break;
         case COL.powerWindows: if (displayValue === 'F') { displayValue = 'Front only'; } else if (displayValue === 'FR') { displayValue = 'Both'; }
-          break;
-        case COL.rearViewCamera: if (displayValue === 'D') { displayValue = 'Dynamic Guidelines'; } else if (displayValue === 'Y') { displayValue = 'Static Guidelines'; }
           break;
         default: break;
       }

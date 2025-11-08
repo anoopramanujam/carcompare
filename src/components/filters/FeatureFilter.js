@@ -71,7 +71,6 @@ const filterLabels = [
     description: 'Airbags, Sensors...',
     options: [
       { label: 'Rear Parking Sensors', name: COL.rearSensors },
-      { label: 'Rear View Camera', name: COL.rearViewCamera },
       { label: 'Front Parking Sensors', name: COL.frontSensors },
       { label: 'Side Curtain Airbags', name: COL.sideCurtainAirbags },
       { label: 'Front Side Airbags', name: COL.frontSideAirbags },
