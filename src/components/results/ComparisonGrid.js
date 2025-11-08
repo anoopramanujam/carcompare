@@ -129,7 +129,7 @@ function ComparisonGrid({ cars, onClose }) {
           X
         </Button>
       </Box>
-      <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
+      <TableContainer component={Paper} sx={{ width: '100%', height: '100%', pt: 6 }}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
