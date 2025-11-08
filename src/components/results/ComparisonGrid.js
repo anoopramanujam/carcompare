@@ -32,8 +32,9 @@ function ComparisonGrid({ cars, onClose }) {
     cols.push({
       id: car.Id,
       minWidth: 150,
-      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]} 
+      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]}
          (${fuel()} ${transmission()})`,
+      lastModified: car['Last Modified'],
     });
     carIds.push(car.Id);
   }
@@ -151,7 +152,14 @@ function ComparisonGrid({ cars, onClose }) {
                   className={`${column.id === 'id' ? 'cc-stickyColHeader' : 'cc-nonSticky'}`}
                   style={{ minWidth: column.minWidth }}
                 >
-                  {column.label}
+                  <div>
+                    {column.label}
+                    {column.lastModified && (
+                      <Typography variant="caption" display="block" sx={{ color: 'text.secondary', fontSize: '0.7rem', mt: 0.5 }}>
+                        {column.lastModified}
+                      </Typography>
+                    )}
+                  </div>
                 </TableCell>
               ))}
             </TableRow>
