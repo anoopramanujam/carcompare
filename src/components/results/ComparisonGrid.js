@@ -156,6 +156,8 @@ function ComparisonGrid({ cars, onClose }) {
                     {column.label}
                     {column.lastModified && (
                       <Typography variant="caption" display="block" sx={{ color: 'text.secondary', fontSize: '0.7rem', mt: 0.5 }}>
+                        Updated on
+                        {' '}
                         {column.lastModified}
                       </Typography>
                     )}
