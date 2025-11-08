@@ -80,7 +80,6 @@ export const laneCamera = 'Lane Camera';
 export const camera360 = '360 Camera';
 export const dualHorn = 'Dual Horn';
 export const frontSensors = 'Front Parking Sensors';
-export const rearViewCamera = 'Rear View Camera';
 export const rearSensors = 'Rear Sensors';
 export const tpms = 'TPMS';
 export const isoFixCompatibility = 'IsoFix Compatibility';

@@ -42,7 +42,6 @@ const initialState = {
   [COL.frontSideAirbags]: PREFERRED,
   [COL.sideCurtainAirbags]: PREFERRED,
   [COL.rearSensors]: PREFERRED,
-  [COL.rearViewCamera]: PREFERRED,
   [COL.frontSensors]: PREFERRED,
   [COL.dualHorn]: PREFERRED,
   [COL.camera360]: PREFERRED,
