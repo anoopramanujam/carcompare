@@ -111,63 +111,61 @@ function ComparisonGrid({ cars, onClose }) {
   }
 
   return (
-    <>
-      <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-        <Button
-          variant="contained"
-          onClick={() => onClose()}
-          sx={{
-            position: 'absolute',
-            top: 8,
-            right: 8,
-            zIndex: 999,
-            minWidth: 'auto',
-            px: 1.5,
-          }}
-        >
-          X
-        </Button>
-        <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
-        <Table stickyHeader aria-label="sticky table" size="small">
-          <TableHead>
-            <TableRow>
-              {cols.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  className={`${column.id === 'id' ? 'cc-stickyColHeader' : 'cc-nonSticky'}`}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows
-              .map((row) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  {cols.map((column) => {
-                    const value = row[column.id];
-                    return (
-                      <TableCell
-                        key={column.id}
-                        align={column.align}
-                        className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
-                      >
-                        {column.format && typeof value === 'number'
-                          ? column.format(value)
-                          : value}
-                      </TableCell>
-                    );
-                  })}
-                </TableRow>
-              ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      </Box>
-    </>
+    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+      <Button
+        variant="contained"
+        onClick={() => onClose()}
+        sx={{
+          position: 'absolute',
+          top: 8,
+          right: 8,
+          zIndex: 999,
+          minWidth: 'auto',
+          px: 1.5,
+        }}
+      >
+        X
+      </Button>
+      <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
+          <Table stickyHeader aria-label="sticky table" size="small">
+            <TableHead>
+              <TableRow>
+                {cols.map((column) => (
+                  <TableCell
+                    key={column.id}
+                    align={column.align}
+                    className={`${column.id === 'id' ? 'cc-stickyColHeader' : 'cc-nonSticky'}`}
+                    style={{ minWidth: column.minWidth }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows
+                .map((row) => (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    {cols.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell
+                          key={column.id}
+                          align={column.align}
+                          className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
+                        >
+                          {column.format && typeof value === 'number'
+                            ? column.format(value)
+                            : value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+    </Box>
   );
 }
 
