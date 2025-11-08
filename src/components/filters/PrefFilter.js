@@ -13,6 +13,12 @@ function PrefFilter() {
   const globals = useSelector((state) => state.globalData);
   const dispatch = useDispatch();
 
+  // Map internal field names to display labels
+  const getDisplayLabel = (option) => {
+    if (option === COL.mileage) return 'Range';
+    return option;
+  };
+
   useEffect(() => {
     if (globals.wizardMode) { dispatch(setWizardMode(false)); }
   }, []);
@@ -59,7 +65,7 @@ function PrefFilter() {
         {
           options.map((option) => (
             <React.Fragment key={option}>
-              <FormControlLabel value={option} control={<Radio />} label={option} />
+              <FormControlLabel value={option} control={<Radio />} label={getDisplayLabel(option)} />
             </React.Fragment>
           ))
 
