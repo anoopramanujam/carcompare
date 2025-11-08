@@ -112,24 +112,22 @@ function ComparisonGrid({ cars, onClose }) {
 
   return (
     <>
-      <Box sx={{
-        p: 1,
-        pr: 2,
-        position: 'fixed',
-        zIndex: 999,
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}
-      >
+      <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
         <Button
           variant="contained"
           onClick={() => onClose()}
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            zIndex: 999,
+            minWidth: 'auto',
+            px: 1.5,
+          }}
         >
           X
         </Button>
-      </Box>
-      <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
+        <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
@@ -168,6 +166,7 @@ function ComparisonGrid({ cars, onClose }) {
           </TableBody>
         </Table>
       </TableContainer>
+      </Box>
     </>
   );
 }
