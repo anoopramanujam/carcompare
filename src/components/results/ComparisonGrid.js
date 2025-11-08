@@ -114,6 +114,7 @@ function ComparisonGrid({ cars, onClose }) {
     <>
       <Box sx={{
         p: 1,
+        pr: 2,
         position: 'fixed',
         zIndex: 999,
         width: '100%',
