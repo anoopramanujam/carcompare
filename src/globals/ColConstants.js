@@ -16,6 +16,7 @@ export const power = 'Power';
 export const torque = 'Torque';
 export const mileage = 'Mileage';
 export const bodyType = 'Body Type';
+export const releaseDate = 'Release Date';
 export const length = 'Length';
 export const width = 'Width';
 export const height = 'Height';
