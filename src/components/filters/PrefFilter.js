@@ -65,7 +65,11 @@ function PrefFilter() {
         {
           options.map((option) => (
             <React.Fragment key={option}>
-              <FormControlLabel value={option} control={<Radio />} label={getDisplayLabel(option)} />
+              <FormControlLabel
+                value={option}
+                control={<Radio />}
+                label={getDisplayLabel(option)}
+              />
             </React.Fragment>
           ))
 
