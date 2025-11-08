@@ -83,3 +83,4 @@ export const frontSensors = 'Front Parking Sensors';
 export const rearSensors = 'Rear Sensors';
 export const tpms = 'TPMS';
 export const isoFixCompatibility = 'IsoFix Compatibility';
+export const adas = 'ADAS';

@@ -79,6 +79,7 @@ const filterLabels = [
       { label: 'Lane Camera', name: COL.laneCamera },
       { label: 'TPMS', name: COL.tpms, helper: 'Type Pressure Monitoring System' },
       { label: 'ISOFIX compatibility', name: COL.isoFixCompatibility, helper: 'Lock children\'s seats securely into car' },
+      { label: 'ADAS', name: COL.adas, helper: 'Advanced Driver Assistance Systems (Level 1, Level 2, etc.)' },
     ],
   },
 

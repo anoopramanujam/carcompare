@@ -139,7 +139,14 @@ function Result() {
         }}
         >
           {/* <Button onClick={() => setComparison(false)}>Close</Button> */}
-          <ComparisonGrid cars={selectedCars} onClose={() => setComparison(false)} />
+          <ComparisonGrid
+            cars={selectedCars}
+            onClose={() => setComparison(false)}
+            onRemoveCar={(carId) => {
+              const updatedCars = selectedCars.filter((car) => car.Id !== carId);
+              setSelectedCars(updatedCars);
+            }}
+          />
         </Box>
       </Modal>
       <Box

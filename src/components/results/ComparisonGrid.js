@@ -9,7 +9,7 @@ import * as COL from '../../globals/ColConstants';
 import './Grid.css';
 import { HATCH, SEDAN } from '../../globals/Constants';
 
-function ComparisonGrid({ cars, onClose }) {
+function ComparisonGrid({ cars, onClose, onRemoveCar }) {
   if (!cars) {
     return null;
   }
@@ -18,22 +18,10 @@ function ComparisonGrid({ cars, onClose }) {
   const carIds = ['id'];
   for (let i = 0; i < cars.length; i += 1) {
     const car = cars[i];
-    const fuel = () => {
-      if (car[COL.fuel] === 'P') { return 'Petrol'; }
-      if (car[COL.fuel] === 'D') { return 'Diesel'; }
-      if (car[COL.fuel] === 'E') { return 'Electric'; }
-      return '';
-    };
-
-    const transmission = () => {
-      if (car[COL.transmission][0] === 'M') { return 'Manual'; }
-      return 'Automatic';
-    };
     cols.push({
       id: car.Id,
       minWidth: 150,
-      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]}
-         (${fuel()} ${transmission()})`,
+      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]}`,
       lastModified: car['Last Modified'],
     });
     carIds.push(car.Id);
@@ -64,7 +52,7 @@ function ComparisonGrid({ cars, onClose }) {
     COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
     COL.camera360, COL.laneCamera, COL.tpms,
-    COL.isoFixCompatibility,
+    COL.isoFixCompatibility, COL.adas,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
@@ -151,7 +139,26 @@ function ComparisonGrid({ cars, onClose }) {
                   style={{ minWidth: column.minWidth }}
                 >
                   <div>
-                    {column.label}
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+                      <Box sx={{ flex: 1 }}>
+                        {column.label}
+                      </Box>
+                      {column.id !== 'id' && onRemoveCar && (
+                        <Button
+                          size="small"
+                          onClick={() => onRemoveCar(column.id)}
+                          sx={{
+                            minWidth: 'auto',
+                            padding: '2px 4px',
+                            color: 'text.secondary',
+                            fontSize: '0.75rem',
+                            ml: 0.5,
+                          }}
+                        >
+                          ×
+                        </Button>
+                      )}
+                    </Box>
                     {column.lastModified && (
                       <Typography variant="caption" display="block" sx={{ color: 'text.secondary', fontSize: '0.7rem', mt: 0.5 }}>
                         Updated on
