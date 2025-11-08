@@ -1,21 +1,27 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Alert, AlertTitle, Typography } from '../mui';
 
 function IntroMessage() {
+  const cars = useSelector((state) => state.globalData.cars);
+
+  // Calculate unique models and total variants
+  const uniqueModels = new Set();
+  cars.forEach((car) => {
+    uniqueModels.add(`${car.Make} ${car.Model}`);
+  });
+
+  const modelsList = Array.from(uniqueModels).sort();
+
   return (
     <Alert severity="info" icon={false}>
-      <AlertTitle>Set your specs, choose your features and find your car!</AlertTitle>
+      <AlertTitle>Set your specs, choose your features and find your electric car!</AlertTitle>
 
       <ul>
-        <li> 19 models and 202 variants</li>
-        <li>(IN PROGRESS) Includes all cars in India which sells more than 2500 units a month</li>
+        <li>{uniqueModels.size} electric vehicle models and {cars.length} variants</li>
         <li>Free and open-source</li>
         <li>
-          TO BE INCLUDED SOON: Tata Altroz,
-          aMahindra XUV 700, Nissan Magnite,  Hyundai Aura, Honda Amaze,
-          Mahindra Scorpio, Hyundai Alcazar,
-          Renault Kiger, Tata Safari, Mahindra XUV 300,
-          Toyota Urban Cruiser,  Tata Tigor, Maruti Ignis, Toyota Glanza
+          <strong>Included models:</strong> {modelsList.join(', ')}
         </li>
       </ul>
 
