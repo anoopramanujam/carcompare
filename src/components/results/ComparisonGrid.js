@@ -41,7 +41,7 @@ function ComparisonGrid({ cars, onClose }) {
 
   const rows = [];
 
-  const featuresToProcess = [COL.price, COL.bodyType,
+  const featuresToProcess = [COL.price, COL.bodyType, COL.releaseDate,
     COL.engineCapacity, COL.mileage, COL.power, COL.torque,
     COL.length, COL.width, COL.height, COL.wheelbase,
     COL.groundClearance, COL.turningRadius, COL.bootSpace,
