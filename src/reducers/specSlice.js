@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { act } from 'react-dom/test-utils';
 
 const initialState = {
-  price: 25,
+  price: 50,
   hatch: true,
   sedan: true,
   suv: true,
