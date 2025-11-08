@@ -136,7 +136,7 @@ function ComparisonGrid({ cars, onClose }) {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
+                  className={`${column.id === 'id' ? 'cc-stickyColHeader' : 'cc-nonSticky'}`}
                   style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
@@ -155,11 +155,6 @@ function ComparisonGrid({ cars, onClose }) {
                         key={column.id}
                         align={column.align}
                         className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
-                        sx={{
-                          position: `${column.id === 'id' ? 'sticky' : ''}`,
-                          background: `${column.id === 'id' ? 'white' : ''}`,
-                          zIndex: `${column.id === 'id' ? 10 : 1}`,
-                        }}
                       >
                         {column.format && typeof value === 'number'
                           ? column.format(value)
