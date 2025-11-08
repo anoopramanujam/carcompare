@@ -67,10 +67,12 @@
     "360 Camera": "-",
     "Dual Horn": "-",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jul 2022"
   },
   {
     "Id": "Tata-Nexon EV-Max-E-A1",
@@ -140,10 +142,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "May 2022"
   },
   {
     "Id": "Tata-Tigor EV-XT-E-A1",
@@ -213,10 +217,12 @@
     "360 Camera": "-",
     "Dual Horn": "-",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "-",
     "TPMS": "-",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2022"
   },
   {
     "Id": "Tata-Tigor EV-XZ+-E-A1",
@@ -286,10 +292,12 @@
     "360 Camera": "-",
     "Dual Horn": "-",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2022"
   },
   {
     "Id": "MG-ZS EV-Excite-E-A1",
@@ -359,10 +367,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jul 2022"
   },
   {
     "Id": "MG-ZS EV-Exclusive-E-A1",
@@ -432,10 +442,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2022"
   },
   {
     "Id": "Mahindra-XUV400-EC-E-A1",
@@ -505,10 +517,12 @@
     "360 Camera": "-",
     "Dual Horn": "-",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2023"
   },
   {
     "Id": "Mahindra-XUV400-EL-E-A1",
@@ -578,10 +592,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2023"
   },
   {
     "Id": "Hyundai-Kona Electric-Premium-E-A1",
@@ -651,10 +667,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jul 2019"
   },
   {
     "Id": "BYD-Atto 3-Premium-E-A1",
@@ -724,10 +742,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jul 2024"
   },
   {
     "Id": "Citroen-eC3-Live-E-A1",
@@ -800,7 +820,9 @@
     "Rear View Camera": "-",
     "Rear Sensors": "-",
     "TPMS": "-",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Feb 2023"
   },
   {
     "Id": "Citroen-eC3-Feel-E-A1",
@@ -873,7 +895,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "-",
     "TPMS": "-",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Feb 2023"
   },
   {
     "Id": "Hyundai-Creta Electric-Executive 42kWh-E-A1",
@@ -943,10 +967,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart 42kWh-E-A1",
@@ -1016,10 +1042,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart(O) 42kWh-E-A1",
@@ -1089,10 +1117,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart(O) 51.4kWh-E-A1",
@@ -1162,10 +1192,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Hyundai-Creta Electric-Premium 42kWh-E-A1",
@@ -1235,10 +1267,12 @@
     "360 Camera": "-",
     "Dual Horn": "Y",
     "Front Parking Sensors": "-",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Hyundai-Creta Electric-Excellence 51.4kWh-E-A1",
@@ -1308,10 +1342,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jan 2025"
   },
   {
     "Id": "Tata-Harrier EV-Adventure 65-E-A1",
@@ -1384,7 +1420,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "Tata-Harrier EV-Adventure S 65-E-A1",
@@ -1457,7 +1495,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "Tata-Harrier EV-Fearless+ 65-E-A1",
@@ -1527,10 +1567,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "Tata-Harrier EV-Fearless+ 75-E-A1",
@@ -1600,10 +1642,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "Tata-Harrier EV-Empowered 75-E-A1",
@@ -1673,10 +1717,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "Tata-Harrier EV-Empowered QWD 75-E-A1",
@@ -1746,10 +1792,12 @@
     "360 Camera": "Y",
     "Dual Horn": "Y",
     "Front Parking Sensors": "Y",
-    "Rear View Camera": "Y",
+    "Rear View Camera": "D",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Jun 2025"
   },
   {
     "Id": "MG-Comet EV-Executive-E-A1",
@@ -1822,7 +1870,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "-",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2025"
   },
   {
     "Id": "MG-Comet EV-Excite-E-A1",
@@ -1895,7 +1945,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "-",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2025"
   },
   {
     "Id": "MG-Comet EV-Excite FC-E-A1",
@@ -1968,7 +2020,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "-",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2025"
   },
   {
     "Id": "MG-Comet EV-Exclusive-E-A1",
@@ -2041,7 +2095,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2025"
   },
   {
     "Id": "MG-Comet EV-Exclusive FC-E-A1",
@@ -2114,6 +2170,8 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Mar 2025"
   }
 ]
