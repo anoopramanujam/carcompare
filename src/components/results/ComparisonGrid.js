@@ -18,22 +18,10 @@ function ComparisonGrid({ cars, onClose }) {
   const carIds = ['id'];
   for (let i = 0; i < cars.length; i += 1) {
     const car = cars[i];
-    const fuel = () => {
-      if (car[COL.fuel] === 'P') { return 'Petrol'; }
-      if (car[COL.fuel] === 'D') { return 'Diesel'; }
-      if (car[COL.fuel] === 'E') { return 'Electric'; }
-      return '';
-    };
-
-    const transmission = () => {
-      if (car[COL.transmission][0] === 'M') { return 'Manual'; }
-      return 'Automatic';
-    };
     cols.push({
       id: car.Id,
       minWidth: 150,
-      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]}
-         (${fuel()} ${transmission()})`,
+      label: `${car[COL.make]} ${car[COL.model]} ${car[COL.variant]}`,
       lastModified: car['Last Modified'],
     });
     carIds.push(car.Id);

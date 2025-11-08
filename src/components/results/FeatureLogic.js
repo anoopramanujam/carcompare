@@ -21,7 +21,7 @@ function checkCar(car, featureFilters) {
     COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
     COL.camera360, COL.laneCamera, COL.tpms,
-    COL.isoFixCompatibility,
+    COL.isoFixCompatibility, COL.adas,
   ];
   const result = { ...car, [COL.points]: 0 };
   for (let i = 0; i < features.length; i += 1) {
