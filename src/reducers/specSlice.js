@@ -8,6 +8,7 @@ const initialState = {
   suv: true,
   petrol: true,
   diesel: true,
+  electric: true,
   manual: true,
   auto: true,
 };

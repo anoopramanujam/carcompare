@@ -57,7 +57,7 @@ function CarCard({
           </Typography>
           <Typography variant="caption">
             {' '}
-            {car.Fuel === 'P' ? 'Petrol' : 'Diesel'}
+            {car.Fuel === 'P' ? 'Petrol' : car.Fuel === 'D' ? 'Diesel' : 'Electric'}
             {' '}
             {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
           </Typography>

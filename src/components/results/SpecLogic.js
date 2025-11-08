@@ -5,10 +5,10 @@ const filterSpecs = (data, specFilters) => {
   const price = parseFloat(specFilters.price) || 1000;
   const {
     hatch, sedan, suv,
-    petrol, diesel, manual, auto,
+    petrol, diesel, electric, manual, auto,
   } = specFilters;
   const results = data.filter((x) => (x[COL.price] <= price)
-    && ((x[COL.fuel] === 'P' && petrol) || (x[COL.fuel] === 'D' && diesel))
+    && ((x[COL.fuel] === 'P' && petrol) || (x[COL.fuel] === 'D' && diesel) || (x[COL.fuel] === 'E' && electric))
     && (
       (x[COL.bodyType] === HATCH && hatch)
        || (x[COL.bodyType] === SEDAN && sedan)

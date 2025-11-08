@@ -86,7 +86,8 @@ function SpecFilter() {
 
         {renderCheckboxes('Fuel', [
           { name: 'petrol', label: 'Petrol' },
-          { name: 'diesel', label: 'Diesel' }])}
+          { name: 'diesel', label: 'Diesel' },
+          { name: 'electric', label: 'Electric' }])}
 
         {renderCheckboxes('Transmission', [
           { name: 'manual', label: 'Manual' },

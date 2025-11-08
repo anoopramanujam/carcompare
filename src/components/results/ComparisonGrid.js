@@ -21,6 +21,7 @@ function ComparisonGrid({ cars, onClose }) {
     const fuel = () => {
       if (car[COL.fuel] === 'P') { return 'Petrol'; }
       if (car[COL.fuel] === 'D') { return 'Diesel'; }
+      if (car[COL.fuel] === 'E') { return 'Electric'; }
       return '';
     };
 
