@@ -72,7 +72,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jul 2022",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Nexon EV-Max-E-A1",
@@ -147,7 +148,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "May 2022",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Tigor EV-XT-E-A1",
@@ -222,7 +224,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2022",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "25 kW"
   },
   {
     "Id": "Tata-Tigor EV-XZ+-E-A1",
@@ -297,7 +300,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2022",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "25 kW"
   },
   {
     "Id": "MG-ZS EV-Excite-E-A1",
@@ -372,7 +376,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jul 2022",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "92 kW"
   },
   {
     "Id": "MG-ZS EV-Exclusive-E-A1",
@@ -447,7 +452,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Mar 2022",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "92 kW"
   },
   {
     "Id": "Mahindra-XUV400-EC-E-A1",
@@ -522,7 +528,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2023",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Mahindra-XUV400-EL-E-A1",
@@ -597,7 +604,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2023",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Kona Electric-Premium-E-A1",
@@ -672,7 +680,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jul 2019",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "102 kW"
   },
   {
     "Id": "BYD-Atto 3-Premium-E-A1",
@@ -747,7 +756,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jul 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "88 kW"
   },
   {
     "Id": "Citroen-eC3-Live-E-A1",
@@ -822,7 +832,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Feb 2023",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "25 kW"
   },
   {
     "Id": "Citroen-eC3-Feel-E-A1",
@@ -897,7 +908,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Feb 2023",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "25 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Executive 42kWh-E-A1",
@@ -972,7 +984,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart 42kWh-E-A1",
@@ -1047,7 +1060,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart(O) 42kWh-E-A1",
@@ -1122,7 +1136,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Smart(O) 51.4kWh-E-A1",
@@ -1197,7 +1212,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Premium 42kWh-E-A1",
@@ -1272,7 +1288,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Hyundai-Creta Electric-Excellence 51.4kWh-E-A1",
@@ -1347,7 +1364,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Harrier EV-Adventure 65-E-A1",
@@ -1422,7 +1440,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Harrier EV-Adventure S 65-E-A1",
@@ -1497,7 +1516,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Harrier EV-Fearless+ 65-E-A1",
@@ -1572,7 +1592,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Harrier EV-Fearless+ 75-E-A1",
@@ -1647,7 +1668,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Harrier EV-Empowered 75-E-A1",
@@ -1722,7 +1744,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Harrier EV-Empowered QWD 75-E-A1",
@@ -1797,7 +1820,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jun 2025",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "120 kW"
   },
   {
     "Id": "Tata-Punch EV-Smart-E-A1",
@@ -1872,7 +1896,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Smart Plus-E-A1",
@@ -1947,7 +1972,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Adventure-E-A1",
@@ -2022,7 +2048,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Adventure S-E-A1",
@@ -2097,7 +2124,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered-E-A1",
@@ -2172,7 +2200,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered Plus-E-A1",
@@ -2247,7 +2276,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered S-E-A1",
@@ -2322,7 +2352,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Adventure LR-E-A1",
@@ -2397,7 +2428,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Adventure S LR-E-A1",
@@ -2472,7 +2504,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered LR-E-A1",
@@ -2547,7 +2580,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered Plus LR-E-A1",
@@ -2622,7 +2656,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered S LR-E-A1",
@@ -2697,7 +2732,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered Plus S LR-E-A1",
@@ -2772,7 +2808,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "Tata-Punch EV-Empowered Plus S LR AC FC-E-A1",
@@ -2847,7 +2884,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Jan 2024",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "50 kW"
   },
   {
     "Id": "MG-Comet EV-Executive-E-A1",
@@ -2922,7 +2960,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Mar 2025",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "No DC charging"
   },
   {
     "Id": "MG-Comet EV-Excite-E-A1",
@@ -2997,7 +3036,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Mar 2025",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "No DC charging"
   },
   {
     "Id": "MG-Comet EV-Excite FC-E-A1",
@@ -3072,7 +3112,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Mar 2025",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "No DC charging"
   },
   {
     "Id": "MG-Comet EV-Exclusive-E-A1",
@@ -3147,7 +3188,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Mar 2025",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "No DC charging"
   },
   {
     "Id": "MG-Comet EV-Exclusive FC-E-A1",
@@ -3220,7 +3262,8 @@
     "Rear Sensors": "Y",
     "TPMS": "Y",
     "IsoFix Compatibility": "Y",
-    "ADAS": "-"
+    "ADAS": "-",
+    "Charging Speed": "No DC charging"
   },
   {
     "Id": "Mahindra-BE 6-Pack One-E-A1",
@@ -3295,7 +3338,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-BE 6-Pack Three Select-E-A1",
@@ -3370,7 +3414,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-BE 6-Pack Three-E-A1",
@@ -3445,7 +3490,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack One-E-A1",
@@ -3520,7 +3566,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Two-E-A1",
@@ -3595,7 +3642,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Three Select-E-A1",
@@ -3670,7 +3718,8 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Three-E-A1",
@@ -3745,6 +3794,7 @@
     "IsoFix Compatibility": "Y",
     "Last Modified": "Nov 2025",
     "Release Date": "Nov 2024",
-    "ADAS": "Level 2"
+    "ADAS": "Level 2",
+    "Charging Speed": "175 kW"
   }
 ]

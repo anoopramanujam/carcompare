@@ -11,6 +11,7 @@ export const price = 'Price';
 export const fuel = 'Fuel';
 export const transmission = 'Transmission';
 export const engineCapacity = 'Engine Capacity';
+export const chargingSpeed = 'Charging Speed';
 export const kerbWeight = 'Kerb Weight';
 export const power = 'Power';
 export const torque = 'Torque';
