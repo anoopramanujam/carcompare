@@ -111,23 +111,21 @@ function ComparisonGrid({ cars, onClose }) {
   }
 
   return (
-    <>
-      <Box sx={{
-        p: 1,
-        position: 'fixed',
-        zIndex: 999,
-        background: 'white',
-      }}
+    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+      <Button
+        variant="contained"
+        onClick={() => onClose()}
+        sx={{
+          position: 'absolute',
+          top: 8,
+          right: 8,
+          zIndex: 999,
+          minWidth: 'auto',
+          px: 1.5,
+        }}
       >
-        <Button
-          variant="contained"
-          onClick={() => onClose()}
-          sx={{ }}
-        >
-          Close
-
-        </Button>
-      </Box>
+        X
+      </Button>
       <TableContainer component={Paper} sx={{ width: '100%', height: '100%' }}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
@@ -136,7 +134,7 @@ function ComparisonGrid({ cars, onClose }) {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
+                  className={`${column.id === 'id' ? 'cc-stickyColHeader' : 'cc-nonSticky'}`}
                   style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
@@ -155,11 +153,6 @@ function ComparisonGrid({ cars, onClose }) {
                         key={column.id}
                         align={column.align}
                         className={`${column.id === 'id' ? 'cc-stickyCol' : 'cc-nonSticky'}`}
-                        sx={{
-                          position: `${column.id === 'id' ? 'sticky' : ''}`,
-                          background: `${column.id === 'id' ? 'white' : ''}`,
-                          zIndex: `${column.id === 'id' ? 10 : 1}`,
-                        }}
                       >
                         {column.format && typeof value === 'number'
                           ? column.format(value)
@@ -172,7 +165,7 @@ function ComparisonGrid({ cars, onClose }) {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 }
 
