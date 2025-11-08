@@ -15,6 +15,12 @@ function CarCard({
   const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
   const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
 
+  const getFuelType = (fuelCode) => {
+    if (fuelCode === 'P') return 'Petrol';
+    if (fuelCode === 'D') return 'Diesel';
+    return 'Electric';
+  };
+
   // Used to deselect when user chooses "Deselect All" in parent
   useEffect(() => { setSelected(isSelected); }, [isSelected]);
 
@@ -57,7 +63,7 @@ function CarCard({
           </Typography>
           <Typography variant="caption">
             {' '}
-            {car.Fuel === 'P' ? 'Petrol' : car.Fuel === 'D' ? 'Diesel' : 'Electric'}
+            {getFuelType(car.Fuel)}
             {' '}
             {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
           </Typography>
