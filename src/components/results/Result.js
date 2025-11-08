@@ -62,7 +62,7 @@ function Result() {
         </Typography>
         <Typography variant="caption" display="inline" color="success.main">
           {' '}
-          Mileage (Green)
+          Range (Green)
         </Typography>
         <Typography variant="caption" display="inline">
           {' and '}

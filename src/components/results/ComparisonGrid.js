@@ -21,6 +21,7 @@ function ComparisonGrid({ cars, onClose }) {
     const fuel = () => {
       if (car[COL.fuel] === 'P') { return 'Petrol'; }
       if (car[COL.fuel] === 'D') { return 'Diesel'; }
+      if (car[COL.fuel] === 'E') { return 'Electric'; }
       return '';
     };
 
@@ -40,10 +41,10 @@ function ComparisonGrid({ cars, onClose }) {
   const rows = [];
 
   const featuresToProcess = [COL.price, COL.bodyType,
-    COL.engineCapacity, COL.power, COL.torque,
+    COL.engineCapacity, COL.mileage, COL.power, COL.torque,
     COL.length, COL.width, COL.height, COL.wheelbase,
     COL.groundClearance, COL.turningRadius, COL.bootSpace,
-    COL.tyres, COL.fuelTank,
+    COL.tyres,
     COL.daytimeRunningLamps, COL.projectorHeadLamps, COL.automaticHeadlightControl,
     COL.fogLamps, COL.rainSensingWipers, COL.alloyWheels,
 
@@ -67,9 +68,18 @@ function ComparisonGrid({ cars, onClose }) {
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
     let featureUnit = '';
+    let featureLabel = feature;
+
     switch (feature) {
       case COL.price: featureUnit = 'lakhs'; break;
-      case COL.engineCapacity: featureUnit = 'CC'; break;
+      case COL.engineCapacity:
+        featureLabel = 'Battery Capacity';
+        featureUnit = 'kWh';
+        break;
+      case COL.mileage:
+        featureLabel = 'Range';
+        featureUnit = 'km';
+        break;
       case COL.power: featureUnit = 'PS'; break;
       case COL.torque: featureUnit = 'NM@rpm'; break;
       case COL.length:
@@ -79,11 +89,10 @@ function ComparisonGrid({ cars, onClose }) {
       case COL.groundClearance: featureUnit = 'mm'; break;
       case COL.turningRadius: featureUnit = 'm'; break;
       case COL.bootSpace: featureUnit = 'L'; break;
-      case COL.fuelTank: featureUnit = 'L'; break;
 
       default: break;
     }
-    const featureSet = { id: `${feature} ${featureUnit ? `(${featureUnit})` : ''}` };
+    const featureSet = { id: `${featureLabel} ${featureUnit ? `(${featureUnit})` : ''}` };
     for (let n = 0; n < cars.length; n += 1) {
       const thisCar = cars[n];
       let displayValue = thisCar[feature];

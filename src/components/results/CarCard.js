@@ -11,9 +11,15 @@ function CarCard({
   car, maxValues, onSelect, isSelected,
 }) {
   const [selected, setSelected] = useState(isSelected);
-  const mileagePct = Math.floor((car.Mileage * 100) / maxValues[COL.mileage]);
+  const rangePct = Math.floor((car.Mileage * 100) / maxValues[COL.mileage]);
   const featurePct = Math.floor((car.Points * 100) / maxValues[COL.points]);
   const powerPct = Math.floor((car.Power * 100) / maxValues[COL.power]);
+
+  const getFuelType = (fuelCode) => {
+    if (fuelCode === 'P') return 'Petrol';
+    if (fuelCode === 'D') return 'Diesel';
+    return 'Electric';
+  };
 
   // Used to deselect when user chooses "Deselect All" in parent
   useEffect(() => { setSelected(isSelected); }, [isSelected]);
@@ -57,7 +63,7 @@ function CarCard({
           </Typography>
           <Typography variant="caption">
             {' '}
-            {car.Fuel === 'P' ? 'Petrol' : 'Diesel'}
+            {getFuelType(car.Fuel)}
             {' '}
             {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
           </Typography>
@@ -68,7 +74,7 @@ function CarCard({
             Lakhs
           </Typography>
           <LinearProgress color="info" variant="determinate" value={featurePct} sx={{ mb: 1 }} />
-          <LinearProgress color="success" variant="determinate" value={mileagePct} sx={{ mb: 1 }} />
+          <LinearProgress color="success" variant="determinate" value={rangePct} sx={{ mb: 1 }} />
           <LinearProgress color="error" variant="determinate" value={powerPct} sx={{ }} />
         </Box>
 
