@@ -64,7 +64,7 @@ function ComparisonGrid({ cars, onClose }) {
     COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
     COL.camera360, COL.laneCamera, COL.tpms,
-    COL.isoFixCompatibility,
+    COL.isoFixCompatibility, COL.adas,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
