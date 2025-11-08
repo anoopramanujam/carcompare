@@ -18,10 +18,20 @@ function IntroMessage() {
       <AlertTitle>Set your specs, choose your features and find your electric car!</AlertTitle>
 
       <ul>
-        <li>{uniqueModels.size} electric vehicle models and {cars.length} variants</li>
+        <li>
+          {uniqueModels.size}
+          {' '}
+          electric vehicle models and
+          {' '}
+          {cars.length}
+          {' '}
+          variants
+        </li>
         <li>Free and open-source</li>
         <li>
-          <strong>Included models:</strong> {modelsList.join(', ')}
+          <strong>Included models:</strong>
+          {' '}
+          {modelsList.join(', ')}
         </li>
       </ul>
 
