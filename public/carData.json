@@ -2243,7 +2243,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-BE 6-Pack Three Select-E-A1",
@@ -2316,7 +2318,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-BE 6-Pack Three-E-A1",
@@ -2389,7 +2393,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack One-E-A1",
@@ -2462,7 +2468,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Two-E-A1",
@@ -2535,7 +2543,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Three Select-E-A1",
@@ -2608,7 +2618,9 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   },
   {
     "Id": "Mahindra-XEV 9e-Pack Three-E-A1",
@@ -2681,6 +2693,8 @@
     "Rear View Camera": "Y",
     "Rear Sensors": "Y",
     "TPMS": "Y",
-    "IsoFix Compatibility": "Y"
+    "IsoFix Compatibility": "Y",
+    "Last Modified": "Nov 2025",
+    "Release Date": "Nov 2024"
   }
 ]
