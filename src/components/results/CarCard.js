@@ -61,12 +61,6 @@ function CarCard({
             {' '}
             {car.Variant}
           </Typography>
-          <Typography variant="caption">
-            {' '}
-            {getFuelType(car.Fuel)}
-            {' '}
-            {car.Transmission[0] === 'M' ? 'Manual' : 'Automatic'}
-          </Typography>
           <Typography variant="body2">
             {' '}
             {car.Price}
