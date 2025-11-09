@@ -12,6 +12,10 @@ export const fuel = 'Fuel';
 export const transmission = 'Transmission';
 export const engineCapacity = 'Engine Capacity';
 export const chargingSpeed = 'Charging Speed';
+export const v2l = 'V2L';
+export const v2v = 'V2V';
+export const acChargingSpeed = 'AC Charging Speed';
+export const batteryTechnology = 'Battery Technology';
 export const kerbWeight = 'Kerb Weight';
 export const power = 'Power';
 export const torque = 'Torque';
@@ -29,7 +33,6 @@ export const tyres = 'Tyres';
 export const fuelTank = 'Fuel Tank';
 
 // Exterior
-export const daytimeRunningLamps = 'Daytime Running Lamps';
 export const projectorHeadLamps = 'Projector Head Lamps';
 export const automaticHeadlightControl = 'Automatic Headlight Control';
 export const fogLamps = 'Fog Lamps';
@@ -54,8 +57,6 @@ export const frontArmrest = 'Front Armrest';
 export const rearArmrest = 'Rear Armrest';
 export const sunRoof = 'Sun Roof';
 export const rearAcVents = 'Rear AC Vents';
-export const rearDefogger = 'Rear Defogger';
-export const rearSeatSplit = 'Rear Seat Split';
 export const trunkLight = 'Trunk Light';
 
 // Comfort
@@ -82,6 +83,4 @@ export const camera360 = '360 Camera';
 export const dualHorn = 'Dual Horn';
 export const frontSensors = 'Front Parking Sensors';
 export const rearSensors = 'Rear Sensors';
-export const tpms = 'TPMS';
-export const isoFixCompatibility = 'IsoFix Compatibility';
 export const adas = 'ADAS';

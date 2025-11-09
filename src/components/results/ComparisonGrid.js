@@ -30,18 +30,18 @@ function ComparisonGrid({ cars, onClose, onRemoveCar }) {
   const rows = [];
 
   const featuresToProcess = [COL.price, COL.bodyType, COL.releaseDate,
-    COL.engineCapacity, COL.chargingSpeed, COL.mileage, COL.power, COL.torque,
+    COL.engineCapacity, COL.chargingSpeed, COL.acChargingSpeed, COL.v2l, COL.v2v,
+    COL.batteryTechnology, COL.mileage, COL.power, COL.torque,
     COL.length, COL.width, COL.height, COL.wheelbase,
     COL.groundClearance, COL.turningRadius, COL.bootSpace,
     COL.tyres,
-    COL.daytimeRunningLamps, COL.projectorHeadLamps, COL.automaticHeadlightControl,
+    COL.projectorHeadLamps, COL.automaticHeadlightControl,
     COL.fogLamps, COL.rainSensingWipers, COL.alloyWheels,
 
     COL.powerWindows, COL.driverSeatAdjust, COL.electFoldableMirrors,
     COL.electAdjustableMirrors, COL.autoDimmingIrvm, COL.tiltSteeringAdjust,
     COL.frontArmrest, COL.rearArmrest, COL.sunRoof,
-    COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit,
-    COL.trunkLight,
+    COL.rearAcVents, COL.trunkLight,
 
     COL.speakers, COL.androidPlay, COL.headsUpDisplay,
     COL.powerWindowsOneTouch, COL.rearSunshade, COL.followMeHomeLights,
@@ -51,8 +51,7 @@ function ComparisonGrid({ cars, onClose, onRemoveCar }) {
 
     COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
-    COL.camera360, COL.laneCamera, COL.tpms,
-    COL.isoFixCompatibility, COL.adas,
+    COL.camera360, COL.laneCamera, COL.adas,
   ];
   for (let m = 0; m < featuresToProcess.length; m += 1) {
     const feature = featuresToProcess[m];
@@ -66,8 +65,21 @@ function ComparisonGrid({ cars, onClose, onRemoveCar }) {
         featureUnit = 'kWh';
         break;
       case COL.chargingSpeed:
-        featureLabel = 'Charging Speed';
-        featureUnit = 'DC Fast';
+        featureLabel = 'DC Charging Speed';
+        featureUnit = 'kW';
+        break;
+      case COL.v2l:
+        featureLabel = 'Vehicle-to-Load (V2L)';
+        break;
+      case COL.v2v:
+        featureLabel = 'Vehicle-to-Vehicle (V2V)';
+        break;
+      case COL.acChargingSpeed:
+        featureLabel = 'AC Charging Speed';
+        featureUnit = 'kW';
+        break;
+      case COL.batteryTechnology:
+        featureLabel = 'Battery Technology';
         break;
       case COL.mileage:
         featureLabel = 'Range';

@@ -18,7 +18,6 @@ const filterLabels = [
     label: 'Exterior',
     description: 'Headlamps, Wheels...',
     options: [
-      { label: 'Daytime Running Lamps', name: COL.daytimeRunningLamps },
       { label: 'Projector Headlamps', name: COL.projectorHeadLamps, helper: 'More brighter, and low glare to others' },
       { label: 'Automatic Headlight Control', name: COL.automaticHeadlightControl, helper: 'Switches on automatically when ambient light is low' },
       { label: 'Foglamps', name: COL.fogLamps },
@@ -40,8 +39,6 @@ const filterLabels = [
       { label: 'Rear Armrest', name: COL.rearArmrest },
       { label: 'Sun Roof', name: COL.sunRoof },
       { label: 'Rear AC Vents', name: COL.rearAcVents },
-      { label: 'Rear Defogger', name: COL.rearDefogger },
-      { label: 'Rear Seat-split', name: COL.rearSeatSplit },
       { label: 'Trunk Light', name: COL.trunkLight },
     ],
   },
@@ -77,9 +74,15 @@ const filterLabels = [
       { label: 'Dual Horn', name: COL.dualHorn },
       { label: '360 Camera', name: COL.camera360, helper: 'Shows top view around the car' },
       { label: 'Lane Camera', name: COL.laneCamera },
-      { label: 'TPMS', name: COL.tpms, helper: 'Type Pressure Monitoring System' },
-      { label: 'ISOFIX compatibility', name: COL.isoFixCompatibility, helper: 'Lock children\'s seats securely into car' },
       { label: 'ADAS', name: COL.adas, helper: 'Advanced Driver Assistance Systems (Level 1, Level 2, etc.)' },
+    ],
+  },
+  {
+    label: 'EV Features',
+    description: 'Charging, Battery...',
+    options: [
+      { label: 'Vehicle-to-Load (V2L)', name: COL.v2l, helper: 'Power external devices from car battery' },
+      { label: 'Vehicle-to-Vehicle (V2V)', name: COL.v2v, helper: 'Charge other electric vehicles' },
     ],
   },
 

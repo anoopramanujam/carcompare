@@ -4,7 +4,6 @@ import * as COL from '../globals/ColConstants';
 
 const initialState = {
   [COL.alloyWheels]: PREFERRED,
-  [COL.daytimeRunningLamps]: PREFERRED,
   [COL.automaticHeadlightControl]: PREFERRED,
   [COL.projectorHeadLamps]: PREFERRED,
   [COL.fogLamps]: PREFERRED,
@@ -20,8 +19,6 @@ const initialState = {
   [COL.rearArmrest]: PREFERRED,
   [COL.sunRoof]: PREFERRED,
   [COL.rearAcVents]: PREFERRED,
-  [COL.rearDefogger]: PREFERRED,
-  [COL.rearSeatSplit]: PREFERRED,
   [COL.trunkLight]: PREFERRED,
 
   [COL.androidPlay]: PREFERRED,
@@ -46,8 +43,11 @@ const initialState = {
   [COL.dualHorn]: PREFERRED,
   [COL.camera360]: PREFERRED,
   [COL.laneCamera]: PREFERRED,
-  [COL.tpms]: PREFERRED,
-  [COL.isoFixCompatibility]: PREFERRED,
+  [COL.adas]: PREFERRED,
+
+  // EV Features
+  [COL.v2l]: PREFERRED,
+  [COL.v2v]: PREFERRED,
 };
 
 const featureSlice = createSlice({
