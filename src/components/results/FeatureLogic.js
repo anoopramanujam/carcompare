@@ -29,14 +29,14 @@ function checkCar(car, featureFilters) {
 
     // Ensure required features are present
     if (featureFilters[feature] === REQUIRED) {
-      if ((car[feature] !== NO) && (car[feature] !== '')) {
+      if ((car[feature] !== NO) && (car[feature] !== 'N') && (car[feature] !== '')) {
         result[COL.points] += 1;
       } else {
         return false;
       }
     } else // Add points if preferred features are present
     if (featureFilters[feature] === PREFERRED
-      && ((car[feature] !== NO) && (car[feature] !== ''))) {
+      && ((car[feature] !== NO) && (car[feature] !== 'N') && (car[feature] !== ''))) {
       result[COL.points] += 1;
     }
   }
