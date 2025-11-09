@@ -7,12 +7,12 @@ import * as COL from '../../globals/ColConstants';
 
 function checkCar(car, featureFilters) {
   const features = [
-    COL.alloyWheels, COL.daytimeRunningLamps, COL.projectorHeadLamps,
+    COL.alloyWheels, COL.projectorHeadLamps,
     COL.automaticHeadlightControl, COL.fogLamps, COL.rainSensingWipers,
     COL.driverSeatAdjust, COL.powerWindows,
     COL.electFoldableMirrors, COL.electAdjustableMirrors, COL.autoDimmingIrvm,
     COL.tiltSteeringAdjust, COL.frontArmrest, COL.sunRoof, COL.rearArmrest,
-    COL.rearAcVents, COL.rearDefogger, COL.rearSeatSplit, COL.trunkLight,
+    COL.rearAcVents, COL.trunkLight,
     COL.androidPlay, COL.steeringMountedControl, COL.headsUpDisplay,
     COL.powerWindowsOneTouch, COL.powerWindowsRemote, COL.rearSunshade,
     COL.followMeHomeLights, COL.wirelessCharging, COL.cooledGloveBox,
@@ -20,8 +20,8 @@ function checkCar(car, featureFilters) {
     COL.cruiseControl, COL.ventilatedFrontSeats,
     COL.rearSensors, COL.frontSensors,
     COL.sideCurtainAirbags, COL.frontSideAirbags, COL.dualHorn,
-    COL.camera360, COL.laneCamera, COL.tpms,
-    COL.isoFixCompatibility, COL.adas,
+    COL.camera360, COL.laneCamera, COL.adas,
+    COL.v2l, COL.v2v,
   ];
   const result = { ...car, [COL.points]: 0 };
   for (let i = 0; i < features.length; i += 1) {
